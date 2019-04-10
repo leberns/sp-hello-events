@@ -3,7 +3,11 @@
 ### Building the code
 
 ```bash
-
+git clone the repo
+npm i
+npm i -g gulp
+gulp build
+gulp serve --nobrowser
 ```
 
 This package produces the following:
