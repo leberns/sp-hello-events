@@ -4,12 +4,13 @@
 
 Please note that paths and URLs have to be changed according to your development environment.
 
-## Development Tools and Extensions
+### Development Tools and Extensions
 
-* Visual Studio Code (also known as VS Code)
+* Browser for the development: Google Chrome
+* Visual Studio Code (also referenced in this project as VS Code)
 * SharePoint Framework
 
-### Typescript React code snippets
+#### Typescript React code snippets
 
 This is an extension for Visual Studio Code which helps generating boilerplate React code through code snippets.
 
@@ -31,7 +32,7 @@ cd C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events
 gulp serve --nobrowser
 ```
 
-Open the Workbench in a browser within your tenant, ex.:
+Open the Workbench, for example:
 ```
 https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/15/workbench.aspx
 ```
@@ -60,11 +61,18 @@ to
 
 ### NPM Packages
 
-During the development the following packages were installed on the project using NPM:
+The following packages were installed on the project using NPM:
 
-* To install [PnPJS](https://github.com/pnp/pnpjs)
+* [PnPJS](https://github.com/pnp/pnpjs)
 
-`npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp --save`
+`npm install --save @pnp/logging @pnp/common @pnp/odata @pnp/sp`
+
+* Jest, see [react-jest-testing](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-jest-testing)
+```
+npm install --save-dev jest jest-junit react-test-renderer sinon ts-jest
+npm install --save-dev identity-obj-proxy
+npm install --save-dev @types/jest
+```
 
 ### Example of a Geolocation field
 
