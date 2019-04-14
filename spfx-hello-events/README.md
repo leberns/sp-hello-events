@@ -1,61 +1,78 @@
 # SPFx Hello Events
 
-### Building the code
+## Development Notes
 
-```bash
+Please note that paths and URLs have to be changed according to your development environment.
+
+## Development Tools and Extensions
+
+* Visual Studio Code (also known as VS Code)
+* SharePoint Framework
+
+### Typescript React code snippets
+
+This is an extension for Visual Studio Code which helps generating boilerplate React code through code snippets.
+
+https://marketplace.visualstudio.com/items?itemName=infeng.vscode-react-typescript
+
+### Building the Code
+
+```
 git clone the repo
 npm i
 npm i -g gulp
 gulp build
+```
+
+### Running the Project
+
+```
+cd C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events
 gulp serve --nobrowser
 ```
 
-This package produces the following:
+Open the Workbench in a browser within your tenant, ex.:
+```
+https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/15/workbench.aspx
+```
+Add the "Hello Events" web part into the page 
 
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
+### Debugging the Project with Visual Studio Code
 
-### Build options
+It is possible to use an interactive debugger with VS Code to debug the web part.
 
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+For that it is necessary to install an extension in VS Code for debugging with the proper browser.
+For Google Chrome the extenson is [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome).
 
-## User Stories
+* Install the extension in VS Code
 
-* filter events
-* events by search API
-* field customizer: select the image with a lookup and render it in a list view 
-* display map with event location
-* subscribe button
-* subscription questions with Survey
-* add event to user calender (MSGraphClient)
+* Edit launch.json under .vscode/ folder of the project and set the url to your test site.
 
-## Development Notes
+Change
 
-### Typescript React code snippets
-
-https://marketplace.visualstudio.com/items?itemName=infeng.vscode-react-typescript
-
-### Debug in SPO
-
-edit launch.json under .vscode/ folder of the project.
-
-      "url": "https://localhost:4321/temp/workbench.html",
-
+```
+"url": "https://localhost:4321/temp/workbench.html",
+```
   to
+```
+"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",
+```
 
-      "url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",
+* Run the project in Google Chrome
+
+  `gulp serve --nobrowser`
+
+* In VS Code, place a breakpoint in the source code and start the debugger (by pressing F5 or Debug > Start Debugging)
+
+* Test the web part on a page and check the breakpoint
+
+### NPM Packages
+
+During development the packages were added to the solution by using the following NPM commands:
+
+To install [PnPJS](https://github.com/pnp/pnpjs)
+`npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp --save`
 
 ### Example of a Geolocation field
 
 "{"EntityType":"LocalBusiness","LocationSource":"Bing","LocationUri":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x12071253885138360471?setLang=de-CH","UniqueId":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x12071253885138360471?setLang=de-CH","DisplayName":"Aktiengesellschaft Hallenstadion Zürich","Address":{"Street":"Wallisellenstrasse 45","City":"Zürich","CountryOrRegion":"CH","State":"Zürich","PostalCode":"8050"},"Coordinates":{"Latitude":47.4116096496582,"Longitude":8.55165958404541}}"
-
-### NPM Packages
-
-During development the following packages were added to the solution using NPM:
-
-`npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp --save`
