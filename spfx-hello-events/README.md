@@ -41,7 +41,8 @@ Add the "Hello Events" web part into the page
 
 It is possible to use an interactive debugger with VS Code to debug the web part.
 
-For that it is necessary to install an extension in VS Code for debugging with the proper browser.
+For that, it is necessary to install an extension in VS Code for debugging with the proper browser.
+
 For Google Chrome the extenson is [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome).
 
 * Install the extension in VS Code
