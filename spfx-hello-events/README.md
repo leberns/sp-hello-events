@@ -60,9 +60,10 @@ to
 
 ### NPM Packages
 
-During development the packages were added to the solution by using the following NPM commands:
+During the development the following packages were installed on the project using NPM:
 
-To install [PnPJS](https://github.com/pnp/pnpjs)
+* To install [PnPJS](https://github.com/pnp/pnpjs)
+
 `npm install @pnp/logging @pnp/common @pnp/odata @pnp/sp --save`
 
 ### Example of a Geolocation field
