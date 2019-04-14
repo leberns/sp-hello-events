@@ -52,13 +52,11 @@ Changing
 to
   `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
 
-* Run the project in Google Chrome
-
-  `gulp serve --nobrowser`
+* Run the project with `gulp serve --nobrowser`
 
 * In VS Code, place a breakpoint in the source code and start the debugger (by pressing F5 or Debug > Start Debugging)
 
-* Test the web part on a page and check the breakpoint
+* Test the web part with Google Chrome and check the breakpoint
 
 ### NPM Packages
 
