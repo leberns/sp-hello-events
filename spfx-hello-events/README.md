@@ -41,23 +41,16 @@ Add the "Hello Events" web part into the page
 
 It is possible to use an interactive debugger with VS Code to debug the web part.
 
-For that, it is necessary to install an extension in VS Code for debugging with the proper browser.
+As prerequisite, it is necessary to install an extension in VS Code for debugging with the proper browser.
 
 For Google Chrome the extenson is [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome).
 
-* Install the extension in VS Code
+Also, it is necessary to edit launch.json (under .vscode/ folder) and set the url to your test site.
 
-* Edit launch.json under .vscode/ folder of the project and set the url to your test site.
-
-Change
-
-```
-"url": "https://localhost:4321/temp/workbench.html",
-```
-  to
-```
-"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",
-```
+Changing
+  `"url": "https://localhost:4321/temp/workbench.html",`
+to
+  `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
 
 * Run the project in Google Chrome
 
