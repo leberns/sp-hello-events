@@ -40,18 +40,17 @@ Add the "Hello Events" web part into the page
 
 ### Debugging the Project with Visual Studio Code
 
-It is possible to use an interactive debugger with VS Code to debug the web part.
+It is possible to use the interactive debugger of VS Code to debug SharePoint Framework projects.
 
-As prerequisite, it is necessary to install an extension in VS Code for debugging with the proper browser.
+As a prerequisite, it is necessary to install an extension in VS Code for debugging with the your respective browser.
 
-For Google Chrome the extenson is [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome).
+For Google Chrome use the extenson: [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome).
 
-Also, it is necessary to edit launch.json (under .vscode/ folder) and set the url to your test site.
+Also, it is necessary to edit `launch.json` (under `.vscode/` folder) and set the url to your test site.
 
-Changing
-  `"url": "https://localhost:4321/temp/workbench.html",`
-to
-  `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
+Changing `"url": "https://localhost:4321/temp/workbench.html",` to `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
+
+After these preparations start a debug session:
 
 * Run the project with `gulp serve --nobrowser`
 
