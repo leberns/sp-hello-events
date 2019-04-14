@@ -1,0 +1,32 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.event {
+
+  @include ms-Grid-row;
+  color: $ms-color-neutralPrimary;
+  padding-bottom: 20px;
+
+  .column1,
+  .column2 {
+    @include ms-Grid-col;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .column1 {
+    @include ms-sm12;
+    @include ms-lg12;
+    @include ms-xl4;
+  }
+
+  .column2 {
+    @include ms-sm12;
+    @include ms-lg12;
+    @include ms-xl8;
+    padding-left: 20px;
+  }
+
+  h2 {
+    margin-block-start: 0;
+  }
+}

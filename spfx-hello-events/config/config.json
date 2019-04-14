@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hello-events-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/helloEvents/HelloEventsWebPart.js",
+          "manifest": "./src/webparts/helloEvents/HelloEventsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HelloEventsWebPartStrings": "lib/webparts/helloEvents/loc/{locale}.js"
+  }
+}

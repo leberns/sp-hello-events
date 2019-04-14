@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "6e22babe-1aff-49dd-aa21-7355006031ee",
+  "alias": "HelloEventsWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart"],
+
+  "preconfiguredEntries": [{
+    "groupId": "75e22ed5-fa14-4829-850a-c890608aca2d", // Communication and collaboration
+    // https://github.com/SharePoint/sp-dev-docs/blob/master/docs/spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries.md#predefined-modern-groups
+    "group": { "default": "Communication and collaboration" },
+    "title": { "default": "Hello Events" },
+    "description": { "default": "Events displaying and management" },
+    "officeFabricIconFontName": "Teamwork",
+    "properties": {
+    }
+  }]
+}
