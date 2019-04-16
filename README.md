@@ -25,4 +25,4 @@ As it is relatively common that solutions to manage News or Events within an org
 ## Project Items
 
 * Hello Events Installer (under construction)
-* (SPFx Hello Events)[./spfx-hello-events]
+* [SPFx Hello Events](./spfx-hello-events)
