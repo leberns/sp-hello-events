@@ -1,6 +1,10 @@
-Go to [Top Project README](../README.md)
+Go to [Topmost Project README](../README.md)
 
 # SPFx Hello Events
+
+## Purpose
+
+This SharePoint Framework project implements a web part to display the events as stored in a list of events in SharePoint.
 
 ## Development Notes
 

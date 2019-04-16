@@ -2,13 +2,13 @@
 
 ## General Notice
 
-Both, the documentation and the project are still in an very early phase and heavy under construction.
+The documentation and the project are still in an very early phase and heavy under construction.
 
 ## Motivation
 
-This project demonstrates a couple of development techniques within modern SharePoint.
+This project demonstrates a couple of development techniques within the modern SharePoint.
 
-As it is relatively common that solutions to manage News or Events within an organization are implemented on top of SharePointm this project implements an Events solution, but with a few changes it could be adapted to a simple News solutions.
+As it is relatively common that solutions to manage News or Events within an organization are implemented on top of SharePoint. This project implements an Events solution, but with a few changes it could be adapted to a simple News solutions.
 
 ## User Stories
 
