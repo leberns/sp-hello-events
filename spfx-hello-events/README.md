@@ -4,7 +4,7 @@ Go to [Topmost Project README](../README.md)
 
 ## Purpose
 
-This SharePoint Framework project implements a web part to display the events as stored in a list of events in SharePoint.
+This SharePoint Framework project implements a web part to display the events as loaded from a list of events in SharePoint.
 
 ## Development Notes
 
@@ -63,6 +63,10 @@ After these preparations start a debug session:
 * In VS Code, place a breakpoint in the source code and start the debugger (by pressing F5 or Debug > Start Debugging)
 
 * Test the web part with Google Chrome and check the breakpoint
+
+### Unit-Testing
+
+Refer to [Testing a SPFx Project with Jest](./testing-spfx-with-jest.md) for a description about how tests were configured, written and performed within this project.
 
 ### NPM Packages
 

@@ -1,6 +1,6 @@
 Go to [SPFx Hello Events README](./README.md)
 
-# Testing SharePoint Framework with Jest
+# Testing a SharePoint Framework Project with Jest
 
 ## Prerequisites
 
