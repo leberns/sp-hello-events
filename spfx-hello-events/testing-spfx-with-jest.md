@@ -4,29 +4,29 @@
 
 ### Install Packages
 
-´´´
+```
 npm install --save-dev jest react-test-renderer ts-jest
 npm install --save-dev @types/jest
 npm install --save-dev sinon
 npm install --save-dev identity-obj-proxy
 npm install --save-dev jest-html-reporters
-´´´
+```
 
 The package `identity-obj-proxy` is needed to allow the loading of modules like scss. The following error apears while running the tests if it is not installed:
 `could not locate module ./HelloEvents.module.scss (mapped as identity-obj-proxy`
 
 These packages are just needed if using Enzyme for the tests:
 
-´´´
+```
 npm install --save-dev enzyme enzyme-adapter-react-16 jest-environment-enzyme jest-enzyme
 npm install --save-dev @types/enzyme-adapter-react-16
-´´´
+```
 
 ### Update package.json
 
 Update the scripts object and add the jest configuration as follows.
 
-´´´
+```
 "scripts": {
     ...
     "test": "jest",                   // run tests (use it instead of gulp test)
@@ -73,7 +73,7 @@ Update the scripts object and add the jest configuration as follows.
       }
     }
   }
-´´´
+```
 
 A few of the jest configurations are explained in the following sections.
 
@@ -94,7 +94,7 @@ Under `coverageThreshold` it is possible to define how much percent of the code 
 
 Adjust thresholds in the configurations of jest as seen in this example (here, 50%):
 
-´´´
+```
     "coverageThreshold": {
       "global": {
         "branches": 50,
@@ -103,7 +103,7 @@ Adjust thresholds in the configurations of jest as seen in this example (here, 5
         "statements": 50
       }
     }
-´´´
+```
 
 ### Update tsconfig.json
 
@@ -129,9 +129,7 @@ This is needed to avoid errors while trying to load the package TestRenderer.
 
 ## Running the Tests
 
-```
-npm test
-```
+`npm test`
 
 ## Testing Examples and Further Reading
 

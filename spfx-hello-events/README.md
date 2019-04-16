@@ -66,12 +66,7 @@ The following packages were installed on the project using NPM:
 
 `npm install --save @pnp/logging @pnp/common @pnp/odata @pnp/sp`
 
-* Jest, see [react-jest-testing](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-jest-testing)
-```
-npm install --save-dev jest jest-junit react-test-renderer sinon ts-jest
-npm install --save-dev identity-obj-proxy
-npm install --save-dev @types/jest
-```
+* Jest, see the specific topic at [Testing SharePoint Framework with Jest](./testing-spfx-with-jest.md)
 
 ### Example of a Geolocation field
 
