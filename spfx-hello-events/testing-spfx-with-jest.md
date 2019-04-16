@@ -1,4 +1,6 @@
-# SharePoint Framework Unit-Tests with Jest
+Go to [SPFx Hello Events README](./README.md) | [Top Project README](../README.md)
+
+# Testing SharePoint Framework with Jest
 
 ## Prerequisites
 
@@ -117,7 +119,7 @@ Add `"esModuleInterop": true,` to `compilerOptions`, for example:
         "target": "es5",
 ```
 
-This is needed to avoid errors while trying to load the package TestRenderer.
+This is needed to avoid errors while trying to load the TestRenderer into the test files.
 
 ## Writing Tests
 
