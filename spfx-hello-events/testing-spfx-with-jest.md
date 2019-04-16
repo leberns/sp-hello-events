@@ -1,4 +1,4 @@
-Go to [SPFx Hello Events README](./README.md) | [Top Project README](../README.md)
+Go to [SPFx Hello Events README](./README.md)
 
 # Testing SharePoint Framework with Jest
 

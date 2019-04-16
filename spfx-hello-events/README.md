@@ -1,3 +1,5 @@
+Go to [Top Project README](../README.md)
+
 # SPFx Hello Events
 
 ## Development Notes
@@ -70,4 +72,4 @@ The following packages were installed on the project using NPM:
 
 ### Example of a Geolocation field
 
-"{"EntityType":"LocalBusiness","LocationSource":"Bing","LocationUri":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x12071253885138360471?setLang=de-CH","UniqueId":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x12071253885138360471?setLang=de-CH","DisplayName":"Aktiengesellschaft Hallenstadion Zürich","Address":{"Street":"Wallisellenstrasse 45","City":"Zürich","CountryOrRegion":"CH","State":"Zürich","PostalCode":"8050"},"Coordinates":{"Latitude":47.4116096496582,"Longitude":8.55165958404541}}"
+...
