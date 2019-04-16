@@ -7,10 +7,10 @@ export interface IEventProps {
   event: IEvent;
 }
 
-export interface IHelloEventState {
+export interface IEventState {
 }
 
-export default class HelloEvent extends React.Component<IEventProps, IHelloEventState> {
+export default class Event extends React.Component<IEventProps, IEventState> {
   constructor(props: IEventProps) {
     super(props);
   }

@@ -32,7 +32,7 @@ cd C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events
 gulp serve --nobrowser
 ```
 
-Open the Workbench, for example:
+Open the Workbench in a browser, for example:
 ```
 https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/15/workbench.aspx
 ```
@@ -42,13 +42,13 @@ Add the "Hello Events" web part into the page
 
 It is possible to use the interactive debugger of VS Code to debug SharePoint Framework projects.
 
-As a prerequisite, it is necessary to install an extension in VS Code for debugging with the your respective browser.
+As a prerequisite, it is necessary to install an extension in VS Code for debugging with your respective browser, here we assume Google Chrome.
 
-For Google Chrome use the extenson: [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome).
+For Google Chrome the extenson is [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome). There are extensions for other browsers like Firefox or Edge, look for them at [Marketplace](https://marketplace.visualstudio.com).
 
-Also, it is necessary to edit `launch.json` (under `.vscode/` folder) and set the url to your test site.
+It is also necessary to edit `launch.json` (under `.vscode/` folder) and set the url to your test site.
 
-Changing `"url": "https://localhost:4321/temp/workbench.html",` to `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
+Changing `"url": "https://localhost:4321/temp/workbench.html",` to, for example: `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
 
 After these preparations start a debug session:
 

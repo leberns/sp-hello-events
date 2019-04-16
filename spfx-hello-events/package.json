@@ -8,7 +8,9 @@
   "scripts": {
     "build": "gulp bundle",
     "clean": "gulp clean",
-    "test": "gulp test"
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "verify-tests": "jest --coverage"
   },
   "dependencies": {
     "@microsoft/sp-core-library": "1.8.0",
@@ -43,9 +45,48 @@
     "gulp": "~3.9.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
-    "jest-junit": "^6.3.0",
+    "jest-html-reporters": "^1.1.3",
     "react-test-renderer": "^16.8.6",
     "sinon": "^7.3.1",
     "ts-jest": "^24.0.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/src/**/*.test.+(ts|tsx|js)"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "cobertura"
+    ],
+    "coverageDirectory": "<rootDir>/jest",
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "reporters": [
+      "default",
+      ["jest-html-reporters", {
+        "publicPath": "./jest",
+        "filename": "test-results.html"
+      }]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    }
   }
 }
