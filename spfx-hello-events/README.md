@@ -66,7 +66,7 @@ After these preparations start a debug session:
 
 ### Unit-Testing
 
-Refer to [Testing a SPFx Project with Jest](./testing-spfx-with-jest.md) for a description about how tests were configured, written and performed within this project.
+Refer to the project document [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md) for a description about how tests were configured, written and performed.
 
 ### NPM Packages
 
@@ -76,7 +76,7 @@ The following packages were installed on the project using NPM:
 
 `npm install --save @pnp/logging @pnp/common @pnp/odata @pnp/sp`
 
-* Jest, see the specific topic at [Testing SharePoint Framework with Jest](./testing-spfx-with-jest.md)
+* Jest, see the specific topic at [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md)
 
 ### Example of a Geolocation field
 

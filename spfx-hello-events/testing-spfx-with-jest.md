@@ -6,6 +6,8 @@ Go to [SPFx Hello Events README](./README.md)
 
 ### Install Packages
 
+Go to the folder where the `package.json` of the project is located and install the following development packages.
+
 ```
 npm install --save-dev jest ts-jest @types/jest
 npm install --save-dev react-test-renderer
@@ -17,7 +19,7 @@ npm install --save-dev jest-html-reporters
 The package `identity-obj-proxy` is needed to allow the loading of modules like scss. The following error appears while running the tests if it is not installed:
 `could not locate module ./HelloEvents.module.scss (mapped as identity-obj-proxy`
 
-These packages are just needed if using Enzyme for the tests:
+These packages are just needed if using Enzyme for the tests (just in case):
 
 ```
 npm install --save-dev enzyme enzyme-adapter-react-16 jest-environment-enzyme jest-enzyme
