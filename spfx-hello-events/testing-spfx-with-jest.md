@@ -18,8 +18,8 @@ npm install --save-dev identity-obj-proxy
 npm install --save-dev jest-html-reporters
 ```
 
-* `jest` is the rest runner: what finds your tests, executes them and shows the results
-* `ts-jest` allows Jest to test projects with TypeScript. This package is needed as SPFx with React uses TypeScript
+* `jest` is the test runner, basically it finds your tests, executes them and shows the results
+* `ts-jest` allows Jest to test projects with TypeScript. This package is needed as SPFx uses TypeScript
 * `@types/jest` TypeScript type definitions of Jest
 * `react-test-renderer` creates JavaScript objects based on the components being tested. The tests you write check then these objects.
 * `sinon` allows mocking
