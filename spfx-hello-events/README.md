@@ -86,6 +86,6 @@ The following packages were installed on the project using NPM:
 
 * [React Moment](https://www.npmjs.com/package/react-moment)
 
-`npm install --save npm install --save ajv@^6.9.1 moment react-moment`
+`npm install --save ajv@^6.9.1 moment react-moment`
 
 * Jest, for details see the topic [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md)
