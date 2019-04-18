@@ -6,6 +6,10 @@ Go to [Topmost Project README](../README.md)
 
 This SharePoint Framework project implements a web part to display the events as loaded from a list of events in SharePoint.
 
+## Prerequisite
+
+The list of events in SharePoint should already exist on the site.
+
 ## Development Notes
 
 Please note that paths and URLs have to be changed according to your development environment.
