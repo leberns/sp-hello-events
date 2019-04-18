@@ -6,8 +6,8 @@ export class MockEventsService implements IEventsService {
   public static readonly evId = 1;
   public static readonly evTitle = 'EduCamp 2019';
   public static readonly evDescription = 'One the first day we are having a workshop about Office 365 and on the second day a city tour.';
-  public static readonly evStart = new Date(2019, 5, 20, 9, 0);
-  public static readonly evEnd = new Date(2019, 5, 21, 17, 0);
+  public static readonly evStart = '2019-06-20T07:00:00.000Z';
+  public static readonly evEnd = '2019-06-21T15:00:00.000Z';
   public static readonly evCategory = { id: 2, title: 'Education' };
   public static readonly evImageId = 1;
   public static readonly evImageUrl = '/sites/CompanyEvents/EventContentImages/team-event.jpeg';
@@ -30,22 +30,22 @@ export class MockEventsService implements IEventsService {
       imageUrl: MockEventsService.evImageUrl,
       location: MockEventsService.evLocation
     }
-    // ,{
-    //   id: 2,
-    //   title: 'Expo IT',
-    //   description: 'Exposition where we are showing our products to the public.',
-    //   start: new Date(2019, 7, 10, 8, 0),
-    //   end: new Date(2019, 7, 10, 16, 0),
-    //   category: { id: 2, title: 'Sales' },
-    //   imageId: 2,
-    //   imageUrl: '/sites/CompanyEvents/EventContentImages/team-event-2.jpeg',
-    //   location: {
-    //     name: 'MCH Messe Schweiz (Zürich) AG',
-    //     street: 'Wallisellenstrasse 49',
-    //     city: 'Zürich',
-    //     country: 'CH'
-    //   }
-    // }
+    ,{
+      id: 2,
+      title: 'Expo IT',
+      description: 'Exposition where we are showing our products to the public.',
+      start: new Date(2019, 7, 10, 8, 0).toISOString(),
+      end: new Date(2019, 7, 10, 16, 0).toISOString(),
+      category: { id: 2, title: 'Sales' },
+      imageId: 2,
+      imageUrl: '/sites/CompanyEvents/EventContentImages/team-event-2.jpeg',
+      location: {
+        name: 'MCH Messe Schweiz (Zürich) AG',
+        street: 'Wallisellenstrasse 49',
+        city: 'Zürich',
+        country: 'CH'
+      }
+    }
   ]};
 
   public static getEvents(): IEventsCollection {
@@ -53,7 +53,7 @@ export class MockEventsService implements IEventsService {
   }
 
   public static getEventByIndex(index: number): IEvent {
-    return MockEventsService.events[index];
+    return MockEventsService.events.items[index];
   }
 
   public fetchEvents(): Promise<IEventsCollection> {

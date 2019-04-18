@@ -76,8 +76,8 @@ The following packages were installed on the project using NPM:
 
 `npm install --save @pnp/logging @pnp/common @pnp/odata @pnp/sp`
 
-* Jest, see the specific topic at [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md)
+* [React Moment](https://www.npmjs.com/package/react-moment)
 
-### Example of a Geolocation field
+`npm install --save npm install --save ajv@^6.9.1 moment react-moment`
 
-...
+* Jest, for details see the topic [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md)

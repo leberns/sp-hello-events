@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Moment from 'react-moment';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { IEvent } from '../../../../references';
 import styles from './Event.module.scss';
@@ -16,6 +17,7 @@ export default class Event extends React.Component<IEventProps, IEventState> {
   }
 
   public render() {
+
     return (
       <div className={ styles.event }>
         <div className={ styles.column1 }>
@@ -27,7 +29,7 @@ export default class Event extends React.Component<IEventProps, IEventState> {
           <div>
             <dl>
               <dt>When:</dt>
-              <dd><time>{ this.props.event.start}</time></dd>
+              <dd><Moment format="DD.MM.YYYY HH:mm">{ this.props.event.start }</Moment></dd>
             </dl>
             <dl>
               <dt>Where:</dt>

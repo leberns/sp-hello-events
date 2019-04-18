@@ -5,8 +5,8 @@ export interface IEvent {
   id: number;
   title: string;
   description: string;
-  start: Date;
-  end: Date;
+  start: string;
+  end: string;
   category: ICategory;
   imageId?: number;
   imageUrl?: string;
