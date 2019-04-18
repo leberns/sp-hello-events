@@ -13,7 +13,6 @@ Go to the folder where the `package.json` of the project is located and install 
 ```
 npm install --save-dev jest ts-jest @types/jest
 npm install --save-dev react-test-renderer
-npm install --save-dev sinon
 npm install --save-dev identity-obj-proxy
 npm install --save-dev jest-html-reporters
 ```
@@ -22,7 +21,6 @@ npm install --save-dev jest-html-reporters
 * `ts-jest` allows Jest to test projects with TypeScript. This package is needed as SPFx uses TypeScript
 * `@types/jest` TypeScript type definitions of Jest
 * `react-test-renderer` creates JavaScript objects based on the components being tested. The tests you write check then these objects.
-* `sinon` allows mocking
 * `identity-obj-proxy` is needed to allow the loading of modules like scss. The following error appears while running the tests if it is not installed:
 `could not locate module ./HelloEvents.module.scss (mapped as identity-obj-proxy`
 * `jest-html-reporters` build a HTML report with the test results
@@ -32,6 +30,11 @@ These packages are just needed if using Enzyme for the tests (just in case):
 ```
 npm install --save-dev enzyme enzyme-adapter-react-16 jest-environment-enzyme jest-enzyme
 npm install --save-dev @types/enzyme-adapter-react-16
+```
+The package `sinon` is an option for mocking APIs instead of mocks from react-test-renderer:
+
+```
+npm install --save-dev sinon
 ```
 
 ### Update package.json
