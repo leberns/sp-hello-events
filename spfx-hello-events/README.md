@@ -6,9 +6,9 @@ Go to [Topmost Project README](../README.md)
 
 This SharePoint Framework project implements a web part to display the events as loaded from a list of events in SharePoint.
 
-## Prerequisite
+## Prerequisites
 
-The list of events in SharePoint should already exist on the site.
+The list of events should already exist on the site.
 
 ## Development Notes
 
@@ -29,9 +29,10 @@ https://marketplace.visualstudio.com/items?itemName=infeng.vscode-react-typescri
 ### Building the Code
 
 ```
-git clone the repo
-npm i
-npm i -g gulp
+cd C:\Dev\GitHub\leberns
+git clone https://github.com/leberns/sp-hello-events.git
+npm install
+npm install -g gulp
 gulp build
 ```
 
