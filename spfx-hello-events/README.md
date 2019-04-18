@@ -71,7 +71,7 @@ After these preparations start a debug session:
 
 ### Unit-Testing
 
-Refer to the project document [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md) for a description about how tests were configured, written and performed.
+Refer to the topic [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md) for a description about how tests were configured, written and performed.
 
 ### NPM Packages
 
