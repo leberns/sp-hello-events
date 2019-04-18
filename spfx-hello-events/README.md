@@ -38,15 +38,18 @@ gulp build
 
 ### Running the Project
 
-```
-cd C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events
-gulp serve --nobrowser
-```
+`cd C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events`
+
+`gulp serve --nobrowser`
 
 Open the Workbench in a browser, for example:
-```
-https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/15/workbench.aspx
-```
+
+`https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/15/workbench.aspx`
+
+or, to test locally without SharePoint (this offers limited functionality):
+
+`gulp serve`
+
 Add the "Hello Events" web part into the page 
 
 ### Debugging the Project with Visual Studio Code
@@ -61,11 +64,11 @@ It is also necessary to edit `launch.json` (under `.vscode/` folder) and set the
 
 Changing `"url": "https://localhost:4321/temp/workbench.html",` to, for example: `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
 
-After these preparations start a debug session:
+To start a debug session after these preparations are done:
 
 * Run the project with `gulp serve --nobrowser`
 
-* In VS Code, place a breakpoint in the source code and start the debugger (by pressing F5 or Debug > Start Debugging)
+* In VS Code: place a breakpoint in the source code and start the debugger (by pressing F5 or Debug > Start Debugging)
 
 * Test the web part with Google Chrome and check the breakpoint
 
