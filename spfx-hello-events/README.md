@@ -40,6 +40,8 @@ gulp build
 
 `cd C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events`
 
+`npm test`
+
 `gulp serve --nobrowser`
 
 Open the Workbench in a browser, for example:

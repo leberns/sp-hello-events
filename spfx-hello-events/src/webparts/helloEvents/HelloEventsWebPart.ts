@@ -10,8 +10,8 @@ import { sp } from "@pnp/sp";
 import { override } from '@microsoft/decorators';
 
 import * as strings from 'HelloEventsWebPartStrings';
-import HelloEvents from './components/HelloEvents';
-import { IHelloEventsProps } from './components/IHelloEventsProps';
+import HelloEvents from './components/helloEvents/HelloEvents';
+import { IHelloEventsProps } from './components/helloEvents/IHelloEventsProps';
 import { ServicesFactory } from '../../services/ServicesFactory';
 import { IEventsService } from '../../services/IEventsService';
 
@@ -28,8 +28,8 @@ export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEven
         spfxContext: this.context
     });
 
-    const isLocalEnvironment = Environment.type === EnvironmentType.Local;
     const servicesFactory = new ServicesFactory();
+    const isLocalEnvironment = Environment.type === EnvironmentType.Local;
     servicesFactory.setLocalEnvironment(isLocalEnvironment);
     this.eventsService = servicesFactory.createEventService();
 
@@ -38,8 +38,7 @@ export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEven
 
   public render(): void {
     const element: React.ReactElement<IHelloEventsProps > = React.createElement(
-      HelloEvents,
-      {
+      HelloEvents, {
         eventsService: this.eventsService
       }
     );

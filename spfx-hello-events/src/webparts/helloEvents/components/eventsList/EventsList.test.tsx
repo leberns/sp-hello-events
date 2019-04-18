@@ -7,25 +7,32 @@ import EventsList from './EventsList';
 describe('EventsList', () => {
 
   it('should receive the children Event components as properties', () => {
-    const events = MockEventsService.getEvents();
+    const events = (new MockEventsService()).getEvents();
     const testRenderer = TestRenderer.create(<EventsList events={events} />);
-    const testInstance = testRenderer.root;
-    expect(testInstance.props.events.items.length).toBe(events.items.length);
+    const instance = testRenderer.root;
+
+    const quantity = instance.props.events.items.length;
+
+    expect(quantity).toBe(events.items.length);
   });
 
-  it('should have Event children components', () => {
-    const events = MockEventsService.getEvents();
+  it('should have children components of Event', () => {
+    const events = (new MockEventsService()).getEvents();
     const testRenderer = TestRenderer.create(<EventsList events={events} />);
     const testInstance = testRenderer.root;
-    const eventComponents = testInstance.findAllByProps({className: "event"});
-    expect(eventComponents.length).toEqual(events.items.length);
+
+    const eventInstances = testInstance.findAllByProps({className: "event"});
+
+    expect(eventInstances.length).toEqual(events.items.length);
   });
 
-  it('the component should have children components', () => {
-    const events = MockEventsService.getEvents();
+  it('should have children components', () => {
+    const events = (new MockEventsService()).getEvents();
     const testRenderer = TestRenderer.create(<EventsList events={events} />);
     const testInstance = testRenderer.root;
+
     const eventsList = testInstance.find(el => el.children.length === events.items.length);
-    expect(eventsList).toBeTruthy();
+
+    expect(eventsList).toBeDefined();
   });
 });

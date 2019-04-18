@@ -7,16 +7,16 @@ export class ServicesFactory {
     private isLocalEnvironmentType: boolean;
 
     public setLocalEnvironment(isLocal: boolean) {
-        this.isLocalEnvironmentType = isLocal;
+      this.isLocalEnvironmentType = isLocal;
     }
 
     public createEventService(): IEventsService {
-        let eventsService: IEventsService;
-        if(this.isLocalEnvironmentType) {
-          eventsService = new MockEventsService();
-        } else {
-          eventsService = new EventsService();
-        }
-        return eventsService;
+      let eventsService: IEventsService;
+      if(this.isLocalEnvironmentType) {
+        eventsService = new MockEventsService();
+      } else {
+        eventsService = new EventsService();
+      }
+      return eventsService;
     }
 }

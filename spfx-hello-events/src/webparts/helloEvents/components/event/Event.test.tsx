@@ -7,7 +7,7 @@ import Event from './Event';
 describe('Event component', () => {
 
   it('should pass properties to the Event component', () => {
-    const event = MockEventsService.getEventByIndex(0);
+    const event = (new MockEventsService()).getEventByIndex(0);
     const testRenderer = TestRenderer.create(<Event event={event} />);
     const testInstance = testRenderer.root;
 
@@ -20,16 +20,22 @@ describe('Event component', () => {
   });
 
   it('should render the Event title', () => {
-    const event = MockEventsService.getEventByIndex(0);
+    const event = (new MockEventsService()).getEventByIndex(0);
     const testRenderer = TestRenderer.create(<Event event={event} />);
     const testInstance = testRenderer.root;
-    expect(testInstance.findByType('h2').props.children).toBe(MockEventsService.evTitle);
+
+    const title = testInstance.findByType('h2').props.children;
+
+    expect(title).toBe(MockEventsService.evTitle);
   });
 
   it('should reference the Event image', () => {
-    const event = MockEventsService.getEventByIndex(0);
+    const event = (new MockEventsService()).getEventByIndex(0);
     const testRenderer = TestRenderer.create(<Event event={event} />);
     const testInstance = testRenderer.root;
-    expect(testInstance.findByType('img').props.src).toBe(MockEventsService.evImageUrl);
+
+    const src = testInstance.findByType('img').props.src;
+
+    expect(src).toBe(MockEventsService.evImageUrl);
   });
 });

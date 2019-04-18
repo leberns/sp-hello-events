@@ -3,6 +3,10 @@ import { IEventsService } from "./IEventsService";
 
 export class MockEventsService implements IEventsService {
 
+  constructor(events?: IEventsCollection) {
+    this.events = !!events ? events : this.events;
+  }
+
   public static readonly evId = 1;
   public static readonly evTitle = 'EduCamp 2019';
   public static readonly evDescription = 'One the first day we are having a workshop about Office 365 and on the second day a city tour.';
@@ -18,7 +22,7 @@ export class MockEventsService implements IEventsService {
     country: 'CH'
   };
 
-  private static events: IEventsCollection = { items: [
+  private events: IEventsCollection = { items: [
     {
       id: MockEventsService.evId,
       title: MockEventsService.evTitle,
@@ -48,16 +52,34 @@ export class MockEventsService implements IEventsService {
     }
   ]};
 
-  public static getEvents(): IEventsCollection {
-    return MockEventsService.events;
+  private static eventsWithNullData: IEventsCollection = { items: [
+    {
+      id: MockEventsService.evId,
+      title: MockEventsService.evTitle,
+      description: null,
+      start: null,
+      end: null,
+      category: null,
+      imageId: null,
+      imageUrl: null,
+      location: null
+    }
+  ]};
+
+  public static getEventsWithNullData(): IEventsCollection {
+    return MockEventsService.eventsWithNullData;
   }
 
-  public static getEventByIndex(index: number): IEvent {
-    return MockEventsService.events.items[index];
+  public getEvents(): IEventsCollection {
+    return this.events;
+  }
+
+  public getEventByIndex(index: number): IEvent {
+    return this.events.items[index];
   }
 
   public fetchEvents(): Promise<IEventsCollection> {
-      const events = MockEventsService.events;
+      const events = this.events;
       return Promise.resolve(events);
   }
 }
