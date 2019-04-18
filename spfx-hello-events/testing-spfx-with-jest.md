@@ -25,7 +25,7 @@ npm install --save-dev jest-html-reporters
 * `sinon` allows mocking
 * `identity-obj-proxy` is needed to allow the loading of modules like scss. The following error appears while running the tests if it is not installed:
 `could not locate module ./HelloEvents.module.scss (mapped as identity-obj-proxy`
-* `jest-html-reporters` build a HTML result with the test results
+* `jest-html-reporters` build a HTML report with the test results
 
 These packages are just needed if using Enzyme for the tests (just in case):
 
@@ -96,7 +96,7 @@ Jest allows the testing reports to be generated in distinct formats.
 * `default` -> outputs to the console
 * `jest-html-reporters` -> outputs to a html file
 
-It is possible to use others formatters, for example for [JUnit](https://www.npmjs.com/package/jest-junit). In this case the respective NPM package has to be installed on the project.
+It is possible to use other formatters, for example for [JUnit](https://www.npmjs.com/package/jest-junit). In this case the respective NPM package has to be installed on the project.
 
 #### Adjust Test Coverage Thresholds
 
