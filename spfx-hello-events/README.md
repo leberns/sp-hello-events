@@ -22,9 +22,7 @@ Please note that paths and URLs have to be changed according to your development
 
 #### Typescript React code snippets
 
-This is an extension for Visual Studio Code which helps generating boilerplate React code through code snippets.
-
-[Typescript React code snippets](https://marketplace.visualstudio.com/items?itemName=infeng.vscode-react-typescript)
+[Typescript React code snippets](https://marketplace.visualstudio.com/items?itemName=infeng.vscode-react-typescript) is an extension for Visual Studio Code which helps generating boilerplate React code through code snippets.
 
 ### Building the Code
 
