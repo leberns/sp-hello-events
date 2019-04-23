@@ -8,7 +8,7 @@ The documentation and the project are still in an very early phase and heavy und
 
 This project demonstrates a couple of development techniques within the modern SharePoint.
 
-It is relatively common that solutions to manage Events or News within an organization are implemented on top of SharePoint. This project implements an Events management solution. 
+It is relatively common that solutions to manage Events or News within an organization are implemented on top of SharePoint. This project implements an Events management solution, but many concepts could be well used to implement a News solution.
 
 ## User Stories
 
