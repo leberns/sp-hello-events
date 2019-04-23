@@ -54,27 +54,11 @@ Add the "Hello Events" web part into the page
 
 ### Debugging the Project with Visual Studio Code
 
-It is possible to use the interactive debugger of VS Code to debug SharePoint Framework projects.
+Visit the topic [Debugging a SPFx Project with Visual Studio Code](https://github.com/leberns/sp-hello-events/wiki/Debugging-a-SPFx-Project-with-Visual-Studio-Code) for more details.
 
-As a prerequisite, it is necessary to install an extension in VS Code for debugging with your respective browser, here we assume Google Chrome.
+### Unit Testing
 
-For Google Chrome the extenson is [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome). There are extensions for other browsers like Firefox or Edge, look for them at [Marketplace](https://marketplace.visualstudio.com).
-
-It is also necessary to edit `launch.json` (under `.vscode/` folder) and set the url to your test site.
-
-Changing `"url": "https://localhost:4321/temp/workbench.html",` to, for example: `"url": "https://contoso.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",`
-
-To start a debug session after these preparations are done:
-
-* Run the project with `gulp serve --nobrowser`
-
-* In VS Code: place a breakpoint in the source code and start the debugger (by pressing F5 or Debug > Start Debugging)
-
-* Test the web part with Google Chrome and check the breakpoint
-
-### Unit-Testing
-
-Refer to the topic [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md) for a description about how tests were configured, written and performed.
+Refer to the topic [Jest Testing a SPFx Project](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project) for a description about how tests were configured, written and performed.
 
 ### NPM Packages
 
@@ -88,4 +72,4 @@ The following packages were installed on the project using NPM:
 
 `npm install --save ajv@^6.9.1 moment react-moment`
 
-* Jest, for details see the topic [Testing a SharePoint Framework Project with Jest](./testing-spfx-with-jest.md)
+* Jest, for details see the topic [Jest Testing a SPFx Project](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)

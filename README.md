@@ -22,7 +22,17 @@ It is relatively common that solutions to manage Events or News within an organi
 * [ ] events by search API
 * [ ] add event to user calender (MSGraphClient)
 
-## Project Items
+## Main Project Items
 
 * Hello Events Installer (under construction)
 * [SPFx Hello Events](./spfx-hello-events)
+
+## Features
+
+This project uses to following development concepts and resources:
+
+- SharePoint Framework Web Part
+- [PnP/PnPJs](https://pnp.github.io/pnpjs/): PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs in a type-safe way  
+- [https://github.com/OfficeDev/office-ui-fabric-react](Office UI Fabric React): Fabric React is a collection of robust React-based components designed to make it simple for you to create consistent web experiences
+- [Unit Testing](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)
+- [Debugging SPFx with Visual Studio Code](https://github.com/leberns/sp-hello-events/wiki/Debugging-a-SPFx-Project-with-Visual-Studio-Code)
