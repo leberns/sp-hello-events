@@ -34,5 +34,6 @@ This project uses to following development concepts and resources:
 - SharePoint Framework Web Part
 - [PnP/PnPJs](https://pnp.github.io/pnpjs/): PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs in a type-safe way  
 - [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react): Fabric React is a collection of robust React-based components designed to make it simple for you to create consistent web experiences
-- [Unit Testing](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)
 - [Debugging with Visual Studio Code](https://github.com/leberns/sp-hello-events/wiki/Debugging-a-SPFx-Project-with-Visual-Studio-Code)
+- [Unit Testing](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)
+- Asynchronous calls using the async / await keywords instead of explicitly using promises

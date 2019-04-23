@@ -1,7 +1,7 @@
 import React from 'react';
 import 'jest';
 import TestRenderer from 'react-test-renderer';
-import { MockEventsService } from '../../../../services/MockEventsService';
+import { MockEventsService } from '../../../../services/events/MockEventsService';
 import EventsListContainer from './EventsListContainer';
 
 describe('EventsListContainer', () => {

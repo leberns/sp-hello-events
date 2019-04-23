@@ -1,4 +1,4 @@
-import { IEvent, IEventsCollection } from "../references";
+import { IEvent, IEventsCollection } from "../../references";
 import { IEventsService } from "./IEventsService";
 
 export class MockEventsService implements IEventsService {

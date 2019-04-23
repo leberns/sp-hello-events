@@ -13,7 +13,7 @@ import * as strings from 'HelloEventsWebPartStrings';
 import HelloEvents from './components/helloEvents/HelloEvents';
 import { IHelloEventsProps } from './components/helloEvents/IHelloEventsProps';
 import { ServicesFactory } from '../../services/ServicesFactory';
-import { IEventsService } from '../../services/IEventsService';
+import { IEventsService } from '../../services/events/IEventsService';
 
 export interface IHelloEventsWebPartProps {
 }
@@ -30,7 +30,7 @@ export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEven
 
     const servicesFactory = new ServicesFactory();
     const isLocalEnvironment = Environment.type === EnvironmentType.Local;
-    servicesFactory.setLocalEnvironment(isLocalEnvironment);
+    servicesFactory.setIsMocking(isLocalEnvironment);
     this.eventsService = servicesFactory.createEventService();
 
     return Promise.resolve();

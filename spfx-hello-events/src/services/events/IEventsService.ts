@@ -1,4 +1,4 @@
-import { IEventsCollection } from "../references";
+import { IEventsCollection } from "../../references";
 
 export interface IEventsService {
     fetchEvents(): Promise<IEventsCollection>;

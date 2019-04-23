@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IEventsCollection } from "../../../../references";
-import { IEventsService } from '../../../../services/IEventsService';
+import { IEventsService } from '../../../../services/events/IEventsService';
 import styles from './EventsListContainer.module.scss';
 import EventsList from '../eventsList/EventsList';
 

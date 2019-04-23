@@ -1,19 +1,18 @@
-import { sp } from "@pnp/sp";
-
-import { IEventsCollection, IEvent } from "../references";
+import { IEventsCollection, IEvent } from "../../references";
 import { IEventsService } from "./IEventsService";
-import { ILocation } from "../models/ILocation";
-import { ICategory } from "../models/ICategory";
+import { IEventsListService } from "../basic/IEventsListService";
+import { IImagesLibService } from "../basic/IImagesLibService";
+import { ILocation } from "../../models/ILocation";
+import { ICategory } from "../../models/ICategory";
 
 export class EventsService implements IEventsService {
 
-  private readonly eventsListTitle = 'Events';
-  private readonly imagesLibraryTitle = 'Event Content Images';
+  constructor(private eventsListService: IEventsListService, private imagesLibService: IImagesLibService) { }
 
   public async fetchEvents(): Promise<IEventsCollection> {
 
-    const eventItems = await this.fetchEventItems();
-    const events = eventItems.map( eventItem => {
+    const eventItems = await this.eventsListService.fetchEventItems();
+    const events = eventItems.map(eventItem => {
 
       const description = !!eventItem['HEvDescription'] ? eventItem['HEvDescription'] : '';
 
@@ -59,28 +58,47 @@ export class EventsService implements IEventsService {
       return event;
     });
 
-    await this.fetchImageUrls(events);
-
     const eventsCollection: IEventsCollection = {
       items: events
     };
 
+    this.retrieveImageUrls(eventsCollection);
+
     return eventsCollection;
   }
 
-  private async fetchEventItems() {
-    const eventsList = sp.web.lists.getByTitle(this.eventsListTitle);
-    const eventItems = await eventsList.items.orderBy('HEvStart').select('Id', 'Title', 'HEvDescription', 'HEvStart', 'HEvEnd', 'HEvCategoryRef/Id', 'HEvCategoryRef/Title', 'HEvImageRef/Id', 'HEvLocation').expand('HEvCategoryRef', 'HEvImageRef').getAll();
-    return eventItems;
-  }
-
-  private async fetchImageUrls(events: IEvent[]): Promise<void> {
-    const imagesLibrary = sp.web.lists.getByTitle(this.imagesLibraryTitle);
-    for(const event of events) {
-      if(!!event.imageId) {
-        const fileItem = await imagesLibrary.items.getById(event.imageId).select('FileRef').get();
-        event.imageUrl = fileItem.FileRef;
+  private retrieveImageUrls(eventsCollection: IEventsCollection) {
+    const imageIds = [];
+    for(let event of eventsCollection.items) {
+      if(!event.imageId) {
+        continue;
       }
+
+      const alreadyPresent = imageIds.some(img => img.id === event.imageId);
+      if(alreadyPresent) {
+        continue;
+      }
+
+      const imageInfo = {
+        id: event.imageId,
+        url: ''
+      };
+      imageIds.push(imageInfo);
+    }
+
+    this.imagesLibService.fetchImageUrls(imageIds);
+
+    for(let event of eventsCollection.items) {
+      if(!event.imageId) {
+        continue;
+      }
+
+      const imageInfos = imageIds.filter(img => img.id === event.imageId);
+      if(imageInfos.length === 0) {
+        continue;
+      }
+
+      event.imageUrl = imageInfos[0].url;
     }
   }
 }
