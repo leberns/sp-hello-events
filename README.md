@@ -32,11 +32,14 @@ It is relatively common that solutions to manage Events or News within an organi
 This project uses to following development concepts and resources.
 
 - Development methods and techniques:
-  - SharePoint Framework Web Part
-  - Asynchronous calls using the async / await keywords instead of explicitly using promises
+  - SharePoint Framework client-side web part implemented with React
+  - Asynchronous calls synchronized by using the async / await keywords instead of explicit promises
   - Debugging with Visual Studio Code, refer to the topic [here](https://github.com/leberns/sp-hello-events/wiki/Debugging-a-SPFx-Project-with-Visual-Studio-Code)
   - Unit Testing, refer to the topic [here](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)
-  - Pattern: Inversion of concerns
+  - Design patterns: Separation of responsabilities, Inversion of control
+  - React components:
+    - Container and Error Boundary Components
+    - Visualization Components
 
 - Libraries and external resources:
   - [PnP/PnPJs](https://pnp.github.io/pnpjs/): PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs in a type-safe way  
