@@ -36,8 +36,8 @@ export class MockEventsService implements IEventsService {
     }
     ,{
       id: 2,
-      title: 'Expo IT',
-      description: 'Exposition where we are showing our products to the public.',
+      title: 'Expo IT 2019',
+      description: 'Exposition where we are showing our products to the public. MockEventsService.',
       start: new Date(2019, 7, 10, 8, 0).toISOString(),
       end: new Date(2019, 7, 10, 16, 0).toISOString(),
       category: { id: 2, title: 'Sales' },

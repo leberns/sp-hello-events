@@ -18,7 +18,7 @@ const fakeEventsList = {
                   countEventItems = eventItems.length;
                   return eventItems;
                 }
-              }
+              };
             }
           };
         }
