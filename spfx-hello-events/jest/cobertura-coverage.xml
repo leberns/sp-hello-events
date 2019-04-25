@@ -1,22 +1,245 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="62" lines-covered="61" line-rate="0.9839" branches-valid="14" branches-covered="12" branch-rate="0.8571" timestamp="1555613284307" complexity="0" version="0.1">
+<coverage lines-valid="146" lines-covered="144" line-rate="0.9863" branches-valid="40" branches-covered="35" branch-rate="0.875" timestamp="1556216375614" complexity="0" version="0.1">
   <sources>
     <source>C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events</source>
   </sources>
   <packages>
-    <package name="services" line-rate="1" branch-rate="1">
+    <package name="services" line-rate="1" branch-rate="0.5">
       <classes>
-        <class name="MockEventsService.ts" filename="src\services\MockEventsService.ts" line-rate="1" branch-rate="1">
+        <class name="ServicesFactory.ts" filename="src\services\ServicesFactory.ts" line-rate="1" branch-rate="0.5">
           <methods>
-            <method name="(anonymous_0)" hits="3" signature="()V">
+            <method name="(anonymous_0)" hits="6" signature="()V">
               <lines>
-                <line number="4" hits="3"/>
+                <line number="8" hits="6"/>
               </lines>
             </method>
-            <method name="MockEventsService" hits="8" signature="()V">
+            <method name="(anonymous_2)" hits="3" signature="()V">
               <lines>
-                <line number="6" hits="8"/>
+                <line number="10" hits="3"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="3" branch="false"/>
+            <line number="2" hits="3" branch="false"/>
+            <line number="4" hits="3" branch="false"/>
+            <line number="8" hits="3" branch="false"/>
+            <line number="10" hits="3" branch="false"/>
+            <line number="11" hits="3" branch="true" condition-coverage="50% (1/2)"/>
+            <line number="12" hits="3" branch="true" condition-coverage="50% (1/2)"/>
+            <line number="14" hits="3" branch="false"/>
+            <line number="15" hits="3" branch="false"/>
+            <line number="17" hits="3" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="services.basic" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="EventsListService.ts" filename="src\services\basic\EventsListService.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_12)" hits="5" signature="()V">
+              <lines>
+                <line number="5" hits="5"/>
+              </lines>
+            </method>
+            <method name="(anonymous_14)" hits="1" signature="()V">
+              <lines>
+                <line number="9" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="4" branch="false"/>
+            <line number="5" hits="4" branch="false"/>
+            <line number="7" hits="1" branch="false"/>
+            <line number="9" hits="4" branch="false"/>
+            <line number="10" hits="1" branch="false"/>
+            <line number="11" hits="1" branch="false"/>
+            <line number="12" hits="1" branch="false"/>
+            <line number="14" hits="4" branch="false"/>
+          </lines>
+        </class>
+        <class name="ImagesLibService.ts" filename="src\services\basic\ImagesLibService.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_12)" hits="6" signature="()V">
+              <lines>
+                <line number="6" hits="6"/>
+              </lines>
+            </method>
+            <method name="(anonymous_14)" hits="1" signature="()V">
+              <lines>
+                <line number="10" hits="1"/>
+              </lines>
+            </method>
+            <method name="(anonymous_17)" hits="2" signature="()V">
+              <lines>
+                <line number="18" hits="2"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="4" branch="false"/>
+            <line number="6" hits="4" branch="false"/>
+            <line number="8" hits="2" branch="false"/>
+            <line number="10" hits="4" branch="false"/>
+            <line number="11" hits="1" branch="false"/>
+            <line number="12" hits="2" branch="false"/>
+            <line number="13" hits="2" branch="false"/>
+            <line number="14" hits="2" branch="false"/>
+            <line number="18" hits="4" branch="false"/>
+            <line number="19" hits="2" branch="false"/>
+            <line number="20" hits="2" branch="false"/>
+            <line number="22" hits="4" branch="false"/>
+          </lines>
+        </class>
+        <class name="MockEventsListService.ts" filename="src\services\basic\MockEventsListService.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_12)" hits="4" signature="()V">
+              <lines>
+                <line number="4" hits="4"/>
+              </lines>
+            </method>
+            <method name="MockEventsListService" hits="4" signature="()V">
+              <lines>
+                <line number="6" hits="4"/>
+              </lines>
+            </method>
+            <method name="(anonymous_14)" hits="5" signature="()V">
+              <lines>
+                <line number="86" hits="5"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="4" branch="false"/>
+            <line number="7" hits="4" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="10" hits="4" branch="false"/>
+            <line number="11" hits="4" branch="false"/>
+            <line number="12" hits="4" branch="false"/>
+            <line number="13" hits="4" branch="false"/>
+            <line number="14" hits="4" branch="false"/>
+            <line number="15" hits="4" branch="false"/>
+            <line number="16" hits="4" branch="false"/>
+            <line number="17" hits="4" branch="false"/>
+            <line number="26" hits="4" branch="false"/>
+            <line number="73" hits="4" branch="false"/>
+            <line number="86" hits="4" branch="false"/>
+            <line number="87" hits="5" branch="false"/>
+            <line number="88" hits="5" branch="false"/>
+            <line number="90" hits="4" branch="false"/>
+          </lines>
+        </class>
+        <class name="MockImagesLibService.ts" filename="src\services\basic\MockImagesLibService.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_12)" hits="6" signature="()V">
+              <lines>
+                <line number="4" hits="6"/>
+              </lines>
+            </method>
+            <method name="(anonymous_14)" hits="4" signature="()V">
+              <lines>
+                <line number="8" hits="4"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="3" branch="false"/>
+            <line number="6" hits="3" branch="false"/>
+            <line number="8" hits="3" branch="false"/>
+            <line number="9" hits="6" branch="false"/>
+            <line number="10" hits="6" branch="false"/>
+            <line number="13" hits="3" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="services.events" line-rate="0.9818000000000001" branch-rate="0.9545">
+      <classes>
+        <class name="EventsService.ts" filename="src\services\events\EventsService.ts" line-rate="1" branch-rate="0.95">
+          <methods>
+            <method name="(anonymous_12)" hits="3" signature="()V">
+              <lines>
+                <line number="8" hits="3"/>
+              </lines>
+            </method>
+            <method name="EventsService" hits="3" signature="()V">
+              <lines>
+                <line number="10" hits="3"/>
+              </lines>
+            </method>
+            <method name="(anonymous_14)" hits="4" signature="()V">
+              <lines>
+                <line number="12" hits="4"/>
+              </lines>
+            </method>
+            <method name="(anonymous_17)" hits="10" signature="()V">
+              <lines>
+                <line number="15" hits="10"/>
+              </lines>
+            </method>
+            <method name="(anonymous_18)" hits="4" signature="()V">
+              <lines>
+                <line number="70" hits="4"/>
+              </lines>
+            </method>
+            <method name="(anonymous_22)" hits="9" signature="()V">
+              <lines>
+                <line number="77" hits="9"/>
+              </lines>
+            </method>
+            <method name="(anonymous_24)" hits="18" signature="()V">
+              <lines>
+                <line number="96" hits="18"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="3" branch="false"/>
+            <line number="10" hits="3" branch="false"/>
+            <line number="12" hits="3" branch="false"/>
+            <line number="14" hits="4" branch="false"/>
+            <line number="15" hits="4" branch="false"/>
+            <line number="17" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="19" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="21" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="23" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="31" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="33" hits="10" branch="false"/>
+            <line number="34" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="46" hits="10" branch="false"/>
+            <line number="58" hits="10" branch="false"/>
+            <line number="61" hits="4" branch="false"/>
+            <line number="65" hits="4" branch="false"/>
+            <line number="67" hits="4" branch="false"/>
+            <line number="70" hits="3" branch="false"/>
+            <line number="71" hits="4" branch="false"/>
+            <line number="72" hits="10" branch="false"/>
+            <line number="73" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="77" hits="9" branch="false"/>
+            <line number="78" hits="9" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="82" hits="6" branch="false"/>
+            <line number="86" hits="6" branch="false"/>
+            <line number="89" hits="4" branch="false"/>
+            <line number="91" hits="10" branch="false"/>
+            <line number="92" hits="10" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="96" hits="18" branch="false"/>
+            <line number="97" hits="9" branch="true" condition-coverage="50% (1/2)"/>
+            <line number="101" hits="9" branch="false"/>
+            <line number="104" hits="3" branch="false"/>
+          </lines>
+        </class>
+        <class name="MockEventsService.ts" filename="src\services\events\MockEventsService.ts" line-rate="0.9565" branch-rate="1">
+          <methods>
+            <method name="(anonymous_0)" hits="2" signature="()V">
+              <lines>
+                <line number="4" hits="2"/>
+              </lines>
+            </method>
+            <method name="MockEventsService" hits="4" signature="()V">
+              <lines>
+                <line number="6" hits="4"/>
               </lines>
             </method>
             <method name="(anonymous_2)" hits="1" signature="()V">
@@ -24,9 +247,9 @@
                 <line number="69" hits="1"/>
               </lines>
             </method>
-            <method name="(anonymous_3)" hits="3" signature="()V">
+            <method name="(anonymous_3)" hits="0" signature="()V">
               <lines>
-                <line number="73" hits="3"/>
+                <line number="73" hits="0"/>
               </lines>
             </method>
             <method name="(anonymous_4)" hits="3" signature="()V">
@@ -34,36 +257,36 @@
                 <line number="77" hits="3"/>
               </lines>
             </method>
-            <method name="(anonymous_5)" hits="4" signature="()V">
+            <method name="(anonymous_5)" hits="2" signature="()V">
               <lines>
-                <line number="81" hits="4"/>
+                <line number="81" hits="2"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="4" hits="3" branch="false"/>
-            <line number="7" hits="8" branch="true" condition-coverage="100% (2/2)"/>
-            <line number="10" hits="3" branch="false"/>
-            <line number="11" hits="3" branch="false"/>
-            <line number="12" hits="3" branch="false"/>
-            <line number="13" hits="3" branch="false"/>
-            <line number="14" hits="3" branch="false"/>
-            <line number="15" hits="3" branch="false"/>
-            <line number="16" hits="3" branch="false"/>
-            <line number="17" hits="3" branch="false"/>
-            <line number="18" hits="3" branch="false"/>
-            <line number="25" hits="8" branch="false"/>
-            <line number="55" hits="3" branch="false"/>
-            <line number="69" hits="3" branch="false"/>
+            <line number="4" hits="2" branch="false"/>
+            <line number="7" hits="4" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="10" hits="2" branch="false"/>
+            <line number="11" hits="2" branch="false"/>
+            <line number="12" hits="2" branch="false"/>
+            <line number="13" hits="2" branch="false"/>
+            <line number="14" hits="2" branch="false"/>
+            <line number="15" hits="2" branch="false"/>
+            <line number="16" hits="2" branch="false"/>
+            <line number="17" hits="2" branch="false"/>
+            <line number="18" hits="2" branch="false"/>
+            <line number="25" hits="4" branch="false"/>
+            <line number="55" hits="2" branch="false"/>
+            <line number="69" hits="2" branch="false"/>
             <line number="70" hits="1" branch="false"/>
-            <line number="73" hits="3" branch="false"/>
-            <line number="74" hits="3" branch="false"/>
-            <line number="77" hits="3" branch="false"/>
+            <line number="73" hits="2" branch="false"/>
+            <line number="74" hits="0" branch="false"/>
+            <line number="77" hits="2" branch="false"/>
             <line number="78" hits="3" branch="false"/>
-            <line number="81" hits="3" branch="false"/>
-            <line number="82" hits="4" branch="false"/>
-            <line number="83" hits="4" branch="false"/>
-            <line number="85" hits="3" branch="false"/>
+            <line number="81" hits="2" branch="false"/>
+            <line number="82" hits="2" branch="false"/>
+            <line number="83" hits="2" branch="false"/>
+            <line number="85" hits="2" branch="false"/>
           </lines>
         </class>
       </classes>
@@ -77,14 +300,14 @@
                 <line number="14" hits="3"/>
               </lines>
             </method>
-            <method name="Event" hits="12" signature="()V">
+            <method name="Event" hits="17" signature="()V">
               <lines>
-                <line number="15" hits="12"/>
+                <line number="15" hits="17"/>
               </lines>
             </method>
-            <method name="(anonymous_9)" hits="14" signature="()V">
+            <method name="(anonymous_9)" hits="20" signature="()V">
               <lines>
-                <line number="19" hits="14"/>
+                <line number="19" hits="20"/>
               </lines>
             </method>
           </methods>
@@ -95,7 +318,7 @@
             <line number="5" hits="3" branch="false"/>
             <line number="14" hits="3" branch="false"/>
             <line number="19" hits="3" branch="false"/>
-            <line number="21" hits="14" branch="false"/>
+            <line number="21" hits="20" branch="false"/>
             <line number="45" hits="3" branch="false"/>
           </lines>
         </class>
@@ -115,9 +338,9 @@
                 <line number="15" hits="8"/>
               </lines>
             </method>
-            <method name="(anonymous_10)" hits="11" signature="()V">
+            <method name="(anonymous_10)" hits="16" signature="()V">
               <lines>
-                <line number="18" hits="11"/>
+                <line number="18" hits="16"/>
               </lines>
             </method>
           </methods>
@@ -128,7 +351,7 @@
             <line number="13" hits="2" branch="false"/>
             <line number="15" hits="2" branch="false"/>
             <line number="16" hits="8" branch="false"/>
-            <line number="19" hits="11" branch="false"/>
+            <line number="19" hits="16" branch="false"/>
             <line number="24" hits="2" branch="false"/>
           </lines>
         </class>

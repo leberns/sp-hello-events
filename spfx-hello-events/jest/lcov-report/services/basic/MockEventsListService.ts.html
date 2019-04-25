@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for services/basic/MockEventsListService.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">services/basic</a> MockEventsListService.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/16</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IEventsListService } from './IEventsListService';
+import { IEventsCollection } from '../../references';
+&nbsp;
+export class MockEventsListService implements IEventsListService {
+&nbsp;
+  constructor(eventItems?: any[]) {
+    this.eventItems = !!eventItems ? eventItems : this.eventItems;
+  }
+&nbsp;
+  public static readonly evId = 1;
+  public static readonly evTitle = 'EduCamp 2019';
+  public static readonly evDescription = 'One the first day we are having a workshop about Office 365 and on the second day a city tour.';
+  public static readonly evStart = '2019-06-20T07:00:00.000Z';
+  public static readonly evEnd = '2019-06-21T15:00:00.000Z';
+  public static readonly evCategoryRef = { Id: 2, Title: 'Education' };
+  public static readonly evImageRef = { Id: 1 };
+  public static readonly evLocation = JSON.stringify({
+    DisplayName: 'Luzern Bahnhof',
+    Address: {
+      Street: 'Zentralstrasse 1',
+      City: 'Luzern',
+      CountryOrRegion: 'CH'
+    }
+  });
+&nbsp;
+  private eventItems = [
+    {
+      Id: MockEventsListService.evId,
+      Title: MockEventsListService.evTitle,
+      HEvDescription: MockEventsListService.evDescription,
+      HEvStart: MockEventsListService.evStart,
+      HEvEnd: MockEventsListService.evEnd,
+      HEvCategoryRef: MockEventsListService.evCategoryRef,
+      HEvImageRef: MockEventsListService.evImageRef,
+      HEvLocation: MockEventsListService.evLocation
+    }
+    ,{
+      Id: 2,
+      Title: 'Expo IT',
+      HEvDescription: 'Exposition where we are showing our products to the public.',
+      HEvStart: new Date(2019, 7, 10, 8, 0).toISOString(),
+      HEvEnd: new Date(2019, 7, 10, 16, 0).toISOString(),
+      HEvCategoryRef: { Id: 1, Title: 'Sales' },
+      HEvImageRef: { Id: 2 },
+      HEvLocation: JSON.stringify({
+        DisplayName: 'MCH Messe Schweiz (Zürich) AG',
+        Address: {
+          Street: 'Wallisellenstrasse 49',
+          City: 'Zürich',
+          CountryOrRegion: 'CH'
+        }
+      })
+    }
+    ,{
+      Id: 3,
+      Title: 'Marketing Workshop',
+      HEvDescription: 'The marketing and sales teams perform a workshop.',
+      HEvStart: new Date(2019, 6, 21, 9, 0).toISOString(),
+      HEvEnd: new Date(2019, 6, 21, 11, 30).toISOString(),
+      HEvCategoryRef: { Id: 1, Title: 'Sales' },
+      HEvImageRef: { Id: 2 },
+      HEvLocation: JSON.stringify({
+        DisplayName: 'Kongresshaus Zürich',
+        Address: {
+          Street: 'Gotthardstrasse 5',
+          City: 'Zürich',
+          CountryOrRegion: 'CH'
+        }
+      })
+    }
+  ];
+&nbsp;
+  public static eventItemsWithNullData = [
+    {
+      Id: MockEventsListService.evId,
+      Title: MockEventsListService.evTitle,
+      HEvDescription: null,
+      HEvStart: null,
+      HEvEnd: null,
+      HEvCategoryRef: null,
+      HEvImageRef: null,
+      HEvLocation: null
+    }
+  ];
+&nbsp;
+  public async fetchEventItems(): Promise&lt;any[]&gt; {
+    const p = Promise.resolve(this.eventItems);
+    return p;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Apr 25 2019 20:19:35 GMT+0200 (W. Europe Summer Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

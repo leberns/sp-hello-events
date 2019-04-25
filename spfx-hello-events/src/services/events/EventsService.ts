@@ -62,12 +62,12 @@ export class EventsService implements IEventsService {
       items: events
     };
 
-    this.retrieveImageUrls(eventsCollection);
+    await this.retrieveImageUrls(eventsCollection);
 
     return eventsCollection;
   }
 
-  private retrieveImageUrls(eventsCollection: IEventsCollection) {
+  private async retrieveImageUrls(eventsCollection: IEventsCollection): Promise<void> {
     const imageIds = [];
     for(let event of eventsCollection.items) {
       if(!event.imageId) {
@@ -86,7 +86,7 @@ export class EventsService implements IEventsService {
       imageIds.push(imageInfo);
     }
 
-    this.imagesLibService.fetchImageUrls(imageIds);
+    await this.imagesLibService.fetchImageUrls(imageIds);
 
     for(let event of eventsCollection.items) {
       if(!event.imageId) {

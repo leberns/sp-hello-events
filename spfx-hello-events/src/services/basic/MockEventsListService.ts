@@ -1,6 +1,11 @@
 import { IEventsListService } from './IEventsListService';
+import { IEventsCollection } from '../../references';
 
 export class MockEventsListService implements IEventsListService {
+
+  constructor(eventItems?: any[]) {
+    this.eventItems = !!eventItems ? eventItems : this.eventItems;
+  }
 
   public static readonly evId = 1;
   public static readonly evTitle = 'EduCamp 2019';
@@ -9,14 +14,14 @@ export class MockEventsListService implements IEventsListService {
   public static readonly evEnd = '2019-06-21T15:00:00.000Z';
   public static readonly evCategoryRef = { Id: 2, Title: 'Education' };
   public static readonly evImageRef = { Id: 1 };
-  public static readonly evLocation = {
+  public static readonly evLocation = JSON.stringify({
     DisplayName: 'Luzern Bahnhof',
     Address: {
       Street: 'Zentralstrasse 1',
       City: 'Luzern',
       CountryOrRegion: 'CH'
     }
-  };
+  });
 
   private eventItems = [
     {
@@ -37,18 +42,35 @@ export class MockEventsListService implements IEventsListService {
       HEvEnd: new Date(2019, 7, 10, 16, 0).toISOString(),
       HEvCategoryRef: { Id: 1, Title: 'Sales' },
       HEvImageRef: { Id: 2 },
-      HEvLocation: {
+      HEvLocation: JSON.stringify({
         DisplayName: 'MCH Messe Schweiz (Zürich) AG',
         Address: {
           Street: 'Wallisellenstrasse 49',
           City: 'Zürich',
           CountryOrRegion: 'CH'
         }
-      }
+      })
+    }
+    ,{
+      Id: 3,
+      Title: 'Marketing Workshop',
+      HEvDescription: 'The marketing and sales teams perform a workshop.',
+      HEvStart: new Date(2019, 6, 21, 9, 0).toISOString(),
+      HEvEnd: new Date(2019, 6, 21, 11, 30).toISOString(),
+      HEvCategoryRef: { Id: 1, Title: 'Sales' },
+      HEvImageRef: { Id: 2 },
+      HEvLocation: JSON.stringify({
+        DisplayName: 'Kongresshaus Zürich',
+        Address: {
+          Street: 'Gotthardstrasse 5',
+          City: 'Zürich',
+          CountryOrRegion: 'CH'
+        }
+      })
     }
   ];
 
-  private static eventItemsWithNullData = [
+  public static eventItemsWithNullData = [
     {
       Id: MockEventsListService.evId,
       Title: MockEventsListService.evTitle,

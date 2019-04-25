@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for webparts/helloEvents/components/eventsList/EventsList.tsx</title>
+    <title>Code coverage report for services/basic/ImagesLibService.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
-    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+            background-image: url(..\..\sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">webparts/helloEvents/components/eventsList</a> EventsList.tsx
+      <a href="..\..\index.html">All files</a> / <a href="index.html">services/basic</a> ImagesLibService.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>16/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/8</span>
+        <span class='fraction'>12/12</span>
       </div>
     </div>
   </div>
@@ -65,54 +65,48 @@
 20
 21
 22
-23
-24
-25</td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+23</td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from 'react';
-import { IEventsCollection } from "../../../../references";
-import styles from './EventsList.module.scss';
-import Event from '../event/Event';
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { sp } from "@pnp/sp";
 &nbsp;
-export interface IEventsListProps {
-  events: IEventsCollection;
-}
+import { IImageInfo } from "../../references";
+import { IImagesLibService } from "./IImagesLibService";
 &nbsp;
-export interface IEventsListState {
-}
+export class ImagesLibService implements IImagesLibService {
 &nbsp;
-export default class EventsList extends React.Component&lt;IEventsListProps, IEventsListState&gt; {
+  private readonly imagesLibraryTitle = 'Event Content Images';
 &nbsp;
-  public render() {
-    return (
-      &lt;div className={ styles.eventsList }&gt;
-        {this.props.events.items.map(event =&gt;
-          &lt;Event key={event.id} event={event} /&gt;
-        )}
-      &lt;/div&gt;
-    );
+  public async fetchImageUrls(imageInfos: IImageInfo[]): Promise&lt;void&gt; {
+    const imagesLibrary = this.getImagesLibrary();
+    for(const imageInfo of imageInfos) {
+      const fileItem = await imagesLibrary.items.getById(imageInfo.id).select('FileRef').get();
+      imageInfo.url = fileItem.FileRef;
+    }
+  }
+&nbsp;
+  public getImagesLibrary(): any {
+    const imagesLibrary = sp.web.lists.getByTitle(this.imagesLibraryTitle);
+    return imagesLibrary;
   }
 }
 &nbsp;</pre></td></tr>
@@ -124,7 +118,7 @@ export default class EventsList extends React.Component&lt;IEventsListProps, IEv
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Apr 25 2019 20:19:35 GMT+0200 (W. Europe Summer Time)
 </div>
 </div>
-<script src="..\..\..\..\prettify.js"></script>
+<script src="..\..\prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -132,6 +126,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="..\..\..\..\sorter.js"></script>
+<script src="..\..\sorter.js"></script>
 </body>
 </html>

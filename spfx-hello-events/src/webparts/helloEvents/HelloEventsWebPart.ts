@@ -14,6 +14,10 @@ import HelloEvents from './components/helloEvents/HelloEvents';
 import { IHelloEventsProps } from './components/helloEvents/IHelloEventsProps';
 import { ServicesFactory } from '../../services/ServicesFactory';
 import { IEventsService } from '../../services/events/IEventsService';
+import { EventsListService } from '../../services/basic/EventsListService';
+import { MockEventsListService } from '../../services/basic/MockEventsListService';
+import { ImagesLibService } from '../../services/basic/ImagesLibService';
+import { MockImagesLibService } from '../../services/basic/MockImagesLibService';
 
 export interface IHelloEventsWebPartProps {
 }
@@ -28,10 +32,13 @@ export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEven
         spfxContext: this.context
     });
 
-    const servicesFactory = new ServicesFactory();
     const isLocalEnvironment = Environment.type === EnvironmentType.Local;
-    servicesFactory.setIsMocking(isLocalEnvironment);
-    this.eventsService = servicesFactory.createEventService();
+    const servicesFactory = new ServicesFactory();
+    if(isLocalEnvironment) {
+      this.eventsService = servicesFactory.createEventService(new MockEventsListService(), new MockImagesLibService());
+    } else {
+      this.eventsService = servicesFactory.createEventService(new EventsListService(), new ImagesLibService());
+    }
 
     return Promise.resolve();
   }

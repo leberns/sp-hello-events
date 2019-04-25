@@ -1,37 +1,45 @@
 import React from 'react';
 import 'jest';
 import TestRenderer from 'react-test-renderer';
-import { MockEventsService } from '../../../../services/events/MockEventsService';
+import { IEventsCollection } from '../../../../references';
+import { MockEventsListService } from '../../../../services/basic/MockEventsListService';
+import { MockImagesLibService } from '../../../../services/basic/MockImagesLibService';
+import { ServicesFactory } from '../../../../services/ServicesFactory';
 import EventsList from './EventsList';
 
 describe('EventsList', () => {
 
-  it('should receive the children Event components as properties', () => {
-    const events = (new MockEventsService()).getEvents();
-    const testRenderer = TestRenderer.create(<EventsList events={events} />);
+  let eventsCollection: IEventsCollection;
+
+  beforeAll( async () => {
+    const servicesFactory = new ServicesFactory();
+    const eventsService = servicesFactory.createEventService(new MockEventsListService(), new MockImagesLibService());
+    eventsCollection = await eventsService.fetchEvents();
+  });
+
+  it('should receive the children Event components as properties', async () => {
+    const testRenderer = TestRenderer.create(<EventsList events={eventsCollection} />);
     const instance = testRenderer.root;
 
     const quantity = instance.props.events.items.length;
 
-    expect(quantity).toBe(events.items.length);
+    expect(quantity).toBe(eventsCollection.items.length);
   });
 
-  it('should have children components of Event', () => {
-    const events = (new MockEventsService()).getEvents();
-    const testRenderer = TestRenderer.create(<EventsList events={events} />);
+  it('should have children components of Event', async () => {
+    const testRenderer = TestRenderer.create(<EventsList events={eventsCollection} />);
     const testInstance = testRenderer.root;
 
     const eventInstances = testInstance.findAllByProps({className: "event"});
 
-    expect(eventInstances.length).toEqual(events.items.length);
+    expect(eventInstances.length).toEqual(eventsCollection.items.length);
   });
 
-  it('should have children components', () => {
-    const events = (new MockEventsService()).getEvents();
-    const testRenderer = TestRenderer.create(<EventsList events={events} />);
+  it('should have children components', async () => {
+    const testRenderer = TestRenderer.create(<EventsList events={eventsCollection} />);
     const testInstance = testRenderer.root;
 
-    const eventsList = testInstance.find(el => el.children.length === events.items.length);
+    const eventsList = testInstance.find(el => el.children.length === eventsCollection.items.length);
 
     expect(eventsList).toBeDefined();
   });
