@@ -1,9 +1,5 @@
 ﻿# SharePoint Hello Events
 
-## General Notice
-
-The documentation and the project are still in an very early phase and heavy under construction.
-
 ## Motivation
 
 This project demonstrates a couple of development techniques within the modern SharePoint.
