@@ -62,7 +62,33 @@ Refer to the topic [Jest Testing a SPFx Project](https://github.com/leberns/sp-h
 
 ### NPM Packages
 
-The following packages were installed on the project using NPM:
+The following packages were installed on the project:
+
+* React 16.7.22 Types for TypeScript
+
+`npm install @types/react@16.7.22 --save-dev --save-exact`
+
+* TypeScript 3.3 and rush-stack-compiler
+
+`npm install @microsoft/rush-stack-compiler-3.3@0.1.6 typescript@3.3 --save-dev --save-exact`
+
+Note 1: when changing the TypeScript version of your solution it is necessary to update the file `tsconfig.json` located in the solution root folder. Update the reference to the `rush-stack-compiler` in the `extends` property. Ex.:
+
+`"extends": "./node_modules/@microsoft/rush-stack-compiler-3.3/includes/tsconfig-web.json",`
+
+Read more here [Andrew Connell: Support for TypeScript v2.7, v2.9 & v3.x (from v2.4.2)](http://www.andrewconnell.com/blog/sharepoint-framework-v1-8-0-what-s-in-the-latest-update-of-spfx#support-for-typescript)
+
+Note 2: update the TypeScript version was necessary because the type declarations found on React types (installed before) and Jest (installed below) used the syntax of a higher TypeScript version. Example of transpilation errors:
+
+```
+gulp build
+...
+Error - [tsc] node_modules/@jest/console/build/BufferedConsole.d.ts(17,146): error TS1144: '{' or ';' expected.
+...
+Error - [tsc] node_modules/@types/react/index.d.ts(2664,5): error TS1128: Declaration or statement expected.
+...
+Error - [tsc] node_modules/jest/node_modules/jest-cli/build/index.d.ts(104,70): error TS1005: ',' expected.
+```
 
 * [PnPJS](https://github.com/pnp/pnpjs)
 

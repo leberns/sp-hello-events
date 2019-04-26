@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="146" lines-covered="144" line-rate="0.9863" branches-valid="40" branches-covered="35" branch-rate="0.875" timestamp="1556220246922" complexity="0" version="0.1">
+<coverage lines-valid="146" lines-covered="144" line-rate="0.9863" branches-valid="40" branches-covered="35" branch-rate="0.875" timestamp="1556266543021" complexity="0" version="0.1">
   <sources>
     <source>C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events</source>
   </sources>
@@ -295,7 +295,7 @@
       <classes>
         <class name="Event.tsx" filename="src\webparts\helloEvents\components\event\Event.tsx" line-rate="1" branch-rate="1">
           <methods>
-            <method name="(anonymous_7)" hits="3" signature="()V">
+            <method name="(anonymous_8)" hits="3" signature="()V">
               <lines>
                 <line number="14" hits="3"/>
               </lines>
@@ -305,7 +305,7 @@
                 <line number="15" hits="17"/>
               </lines>
             </method>
-            <method name="(anonymous_9)" hits="20" signature="()V">
+            <method name="(anonymous_10)" hits="20" signature="()V">
               <lines>
                 <line number="19" hits="20"/>
               </lines>
@@ -328,17 +328,17 @@
       <classes>
         <class name="EventsList.tsx" filename="src\webparts\helloEvents\components\eventsList\EventsList.tsx" line-rate="1" branch-rate="1">
           <methods>
-            <method name="(anonymous_7)" hits="7" signature="()V">
+            <method name="(anonymous_8)" hits="7" signature="()V">
               <lines>
                 <line number="13" hits="7"/>
               </lines>
             </method>
-            <method name="(anonymous_9)" hits="8" signature="()V">
+            <method name="(anonymous_10)" hits="8" signature="()V">
               <lines>
                 <line number="15" hits="8"/>
               </lines>
             </method>
-            <method name="(anonymous_10)" hits="16" signature="()V">
+            <method name="(anonymous_11)" hits="16" signature="()V">
               <lines>
                 <line number="18" hits="16"/>
               </lines>
@@ -361,7 +361,7 @@
       <classes>
         <class name="EventsListContainer.tsx" filename="src\webparts\helloEvents\components\eventsListContainer\EventsListContainer.tsx" line-rate="0.9565" branch-rate="0.8">
           <methods>
-            <method name="(anonymous_19)" hits="1" signature="()V">
+            <method name="(anonymous_20)" hits="1" signature="()V">
               <lines>
                 <line number="16" hits="1"/>
               </lines>
@@ -371,22 +371,22 @@
                 <line number="18" hits="2"/>
               </lines>
             </method>
-            <method name="(anonymous_21)" hits="7" signature="()V">
+            <method name="(anonymous_22)" hits="7" signature="()V">
               <lines>
                 <line number="26" hits="7"/>
               </lines>
             </method>
-            <method name="(anonymous_22)" hits="4" signature="()V">
+            <method name="(anonymous_23)" hits="4" signature="()V">
               <lines>
                 <line number="53" hits="4"/>
               </lines>
             </method>
-            <method name="(anonymous_25)" hits="4" signature="()V">
+            <method name="(anonymous_26)" hits="4" signature="()V">
               <lines>
                 <line number="57" hits="4"/>
               </lines>
             </method>
-            <method name="(anonymous_28)" hits="1" signature="()V">
+            <method name="(anonymous_29)" hits="1" signature="()V">
               <lines>
                 <line number="70" hits="1"/>
               </lines>
