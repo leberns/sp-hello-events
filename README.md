@@ -18,12 +18,11 @@ Version|Date|Comments
 
 ## Main Project Items
 
-* Hello Events Installer (under construction)
-* [SPFx Hello Events](./spfx-hello-events)
-
-## Project Boards
-
-[User stories and tasks](https://github.com/leberns/sp-hello-events/projects)
+Item|Description
+----|-----------
+Hello Events Installer | installer (under construction)
+[SPFx Hello Events](./spfx-hello-events) | SharePoint Framework Solution to manage events
+[User stories and tasks](https://github.com/leberns/sp-hello-events/projects) | Project planning
 
 ## Features
 
