@@ -17,8 +17,8 @@ describe('Event component', () => {
     // console.log(JSON.stringify(event));
     // console.log(testRenderer.toJSON());
 
-    expect(testInstance.props.event.title).toBe(MockEventsService.evTitle);
-    expect(testInstance.props.event.description).toBe(MockEventsService.evDescription);
+    expect(testInstance.props.event.title).toBe(MockEventsListService.evTitle);
+    expect(testInstance.props.event.description).toBe(MockEventsListService.evDescription);
     expect(testInstance.props.event.imageUrl).toBe(MockEventsService.evImageUrl);
   });
 
@@ -29,7 +29,7 @@ describe('Event component', () => {
 
     const title = testInstance.findByType('h2').props.children;
 
-    expect(title).toBe(MockEventsService.evTitle);
+    expect(title).toBe(MockEventsListService.evTitle);
   });
 
   it('should reference the Event image', () => {
@@ -42,10 +42,11 @@ describe('Event component', () => {
     expect(src).toBe(MockEventsService.evImageUrl);
   });
 
-  it('should render an empty event', async () => {
+  it('should render an empty event as fetched from the Events list', async () => {
+    const eventItemsWithNullData = (new MockEventsListService()).getEventItemsWithNullData();
+    const serviceWithNullData = new MockEventsListService(eventItemsWithNullData);
     const servicesFactory = new ServicesFactory();
-    const eventItemsWithNullData = new MockEventsListService(MockEventsListService.eventItemsWithNullData);
-    const eventsService = servicesFactory.createEventService(eventItemsWithNullData, new MockImagesLibService());
+    const eventsService = servicesFactory.createEventService(serviceWithNullData, new MockImagesLibService());
     const eventsCollection = await eventsService.fetchEvents();
     const eventWithNulls = eventsCollection.items[0];
     const testRenderer = TestRenderer.create(<Event event={eventWithNulls} />);
@@ -53,6 +54,6 @@ describe('Event component', () => {
 
     const title = testInstance.findByType('h2').props.children;
 
-    expect(title).toBe(MockEventsService.evTitle);
+    expect(title).toBe(MockEventsListService.evTitle);
   });
 });

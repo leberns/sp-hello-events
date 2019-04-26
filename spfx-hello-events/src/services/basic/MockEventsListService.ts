@@ -70,7 +70,7 @@ export class MockEventsListService implements IEventsListService {
     }
   ];
 
-  public static eventItemsWithNullData = [
+  private eventItemsWithNullData = [
     {
       Id: MockEventsListService.evId,
       Title: MockEventsListService.evTitle,
@@ -82,6 +82,14 @@ export class MockEventsListService implements IEventsListService {
       HEvLocation: null
     }
   ];
+
+  public getEventItems(): any[] {
+    return this.eventItems;
+  }
+
+  public getEventItemsWithNullData(): any[] {
+    return this.eventItemsWithNullData;
+  }
 
   public async fetchEventItems(): Promise<any[]> {
     const p = Promise.resolve(this.eventItems);

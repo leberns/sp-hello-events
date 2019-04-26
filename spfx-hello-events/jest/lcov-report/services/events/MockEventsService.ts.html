@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.83% </span>
+        <span class="strong">94.44% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>23/24</span>
+        <span class='fraction'>17/18</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">95.65% </span>
+        <span class="strong">94.12% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>22/23</span>
+        <span class='fraction'>16/17</span>
       </div>
     </div>
   </div>
@@ -125,11 +125,9 @@
 80
 81
 82
-83
-84
-85
-86</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+83</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,13 +137,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,6 +144,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,6 +209,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IEvent, IEventsCollection } from "../../references";
 import { IEventsService } from "./IEventsService";
+import { MockEventsListService } from "../basic/MockEventsListService";
 &nbsp;
 export class MockEventsService implements IEventsService {
 &nbsp;
@@ -222,13 +217,6 @@ export class MockEventsService implements IEventsService {
     this.events = !!events ? events : this.events;
   }
 &nbsp;
-  public static readonly evId = 1;
-  public static readonly evTitle = 'EduCamp 2019';
-  public static readonly evDescription = 'One the first day we are having a workshop about Office 365 and on the second day a city tour.';
-  public static readonly evStart = '2019-06-20T07:00:00.000Z';
-  public static readonly evEnd = '2019-06-21T15:00:00.000Z';
-  public static readonly evCategory = { id: 2, title: 'Education' };
-  public static readonly evImageId = 1;
   public static readonly evImageUrl = '/sites/CompanyEvents/EventContentImages/team-event.jpeg';
   public static readonly evLocation = {
     name: 'Luzern Bahnhof',
@@ -239,13 +227,16 @@ export class MockEventsService implements IEventsService {
 &nbsp;
   private events: IEventsCollection = { items: [
     {
-      id: MockEventsService.evId,
-      title: MockEventsService.evTitle,
-      description: MockEventsService.evDescription,
-      start: MockEventsService.evStart,
-      end: MockEventsService.evEnd,
-      category: MockEventsService.evCategory,
-      imageId: MockEventsService.evImageId,
+      id: MockEventsListService.evId,
+      title: MockEventsListService.evTitle,
+      description: MockEventsListService.evDescription,
+      start: MockEventsListService.evStart,
+      end: MockEventsListService.evEnd,
+      category: {
+        id: MockEventsListService.evCategoryRef.Id,
+        title: MockEventsListService.evCategoryRef.Title
+      },
+      imageId: MockEventsListService.evImageRef.Id,
       imageUrl: MockEventsService.evImageUrl,
       location: MockEventsService.evLocation
     }
@@ -269,8 +260,8 @@ export class MockEventsService implements IEventsService {
 &nbsp;
   private static eventsWithNullData: IEventsCollection = { items: [
     {
-      id: MockEventsService.evId,
-      title: MockEventsService.evTitle,
+      id: MockEventsListService.evId,
+      title: MockEventsListService.evTitle,
       description: null,
       start: null,
       end: null,
@@ -304,7 +295,7 @@ export class MockEventsService implements IEventsService {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Apr 26 2019 10:15:42 GMT+0200 (W. Europe Summer Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Apr 26 2019 15:58:35 GMT+0200 (W. Europe Summer Time)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>

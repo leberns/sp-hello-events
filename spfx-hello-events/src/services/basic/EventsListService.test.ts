@@ -1,52 +1,29 @@
 import 'jest';
+import { Items } from "@pnp/sp";
+import * as sinon from 'sinon';
 import { EventsListService } from './EventsListService';
 import { MockEventsListService } from './MockEventsListService';
 
-let countEventItems = 0;
+describe('EventsListService', () => {
 
-const fakeEventsList = {
-  items: {
-    orderBy: () => {
-      return {
-        select: () => {
-          return {
-            expand: () => {
-              return {
-                getAll: async () => {
-                  const mockEventsListService = new MockEventsListService();
-                  const eventItems = await mockEventsListService.fetchEventItems();
-                  countEventItems = eventItems.length;
-                  return eventItems;
-                }
-              };
-            }
-          };
-        }
-      };
-    }
-  }
-};
+  let pnpItemsGetAllStub: sinon.SinonStub;
 
-jest.mock('@pnp/sp', () => {
-  return {
-    sp: {
-      web: {
-        lists: {
-          getByTitle: () => { return fakeEventsList; }
-        }
-      }
-    }
-  };
-});
+  beforeEach(() => {
+    pnpItemsGetAllStub = sinon.stub(Items.prototype, "getAll");
+  });
 
-describe('ImagesLibService', () => {
+  afterEach(() => {
+    pnpItemsGetAllStub.restore();
+  });
 
-  it('should fetch the events', async () => {
+  it('should fetch 3 events', async () => {
+    const mockEventItems = (new MockEventsListService()).getEventItems();
+    pnpItemsGetAllStub.resolves(mockEventItems);
     const eventsListService = new EventsListService();
 
     const eventItems = await eventsListService.fetchEventItems();
 
-    expect(eventItems.length).toBe(countEventItems);
+    expect(eventItems.length).toBe(3);
     expect(eventItems[0].Id).toBe(MockEventsListService.evId);
     expect(eventItems[0].Title).toBe(MockEventsListService.evTitle);
     expect(eventItems[0].HEvDescription).toBe(MockEventsListService.evDescription);

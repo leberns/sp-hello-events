@@ -98,4 +98,4 @@ Error - [tsc] node_modules/jest/node_modules/jest-cli/build/index.d.ts(104,70): 
 
 `npm install --save ajv@^6.9.1 moment react-moment`
 
-* Jest, for details see the topic [Jest Testing a SPFx Project](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)
+* Jest, for details visit the topic [Jest Testing a SPFx Project](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)
