@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generator="Robot 3.1.1 (IronPython 2.7.9 on cli)" generated="20190426 22:04:08.304">
+<suite name="Events-Uc" id="s1" source="C:\Dev\GitHub\leberns\sp-hello-events\acceptance-testing\events-uc.robot">
+<test name="Event Display Title" id="s1-t1">
+<kw name="Open Page">
+<doc>Open the workbench.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20190426 22:04:10.142" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:4321/temp/workbench.html'.</msg>
+<status status="PASS" endtime="20190426 22:04:42.440" starttime="20190426 22:04:10.130"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20190426 22:04:42.448" level="INFO">Opening url 'https://localhost:4321/temp/workbench.html'</msg>
+<status status="PASS" endtime="20190426 22:04:42.796" starttime="20190426 22:04:42.443"></status>
+</kw>
+<status status="PASS" endtime="20190426 22:04:42.803" starttime="20190426 22:04:10.102"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Workbench</arg>
+</arguments>
+<msg timestamp="20190426 22:04:42.878" level="INFO">Current page contains text 'Workbench'.</msg>
+<status status="PASS" endtime="20190426 22:04:42.882" starttime="20190426 22:04:42.811"></status>
+</kw>
+<status status="PASS" endtime="20190426 22:04:42.886" critical="yes" starttime="20190426 22:04:10.048"></status>
+</test>
+<status status="PASS" endtime="20190426 22:04:42.908" starttime="20190426 22:04:08.381"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Events-Uc" pass="1">Events-Uc</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
