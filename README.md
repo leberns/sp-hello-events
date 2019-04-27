@@ -30,6 +30,7 @@ This project uses to following development concepts and resources.
   - Asynchronous calls synchronized by using the async / await keywords instead of explicit promises
   - Debugging with Visual Studio Code, refer to the topic [here](https://github.com/leberns/sp-hello-events/wiki/Debugging-a-SPFx-Project-with-Visual-Studio-Code)
   - Unit Testing, refer to the topic [here](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project)
+  - End to End Tests, refer to the topic [here](https://github.com/leberns/sp-hello-events/wiki/Robot-Framework-for-End-to-End-Tests-on-SharePoint-Framework)
   - Design patterns: Separation of responsabilities, Inversion of control
   - React components:
     - Container and Error Boundary Components
