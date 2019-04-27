@@ -43,6 +43,8 @@ pip install webdrivermanager
 
 ## Running the Tests
 
+Note: the SharePoint Framework solution **has be running** with `gulp serve` or `gulp serve --nobrowser`, as usual, before running these tests.
+
 ```PowerShell
 cd C:\Dev\GitHub\leberns\sp-hello-events\acceptance-testing
 .\run-tests.ps1
