@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generator="Robot 3.1.1 (IronPython 2.7.9 on cli)" generated="20190427 22:20:01.593">
+<suite name="Hello-Events-Tests" id="s1" source="C:\Dev\GitHub\leberns\sp-hello-events\acceptance-tests\hello-events-tests.robot">
+<test name="display events from an Events list" id="s1-t1">
+<kw name="Open Page">
+<doc>Open the page given in the url.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${Url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20190427 22:20:03.393" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:4321/temp/workbench.html'.</msg>
+<status status="PASS" endtime="20190427 22:20:35.403" starttime="20190427 22:20:03.376"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${Url}</arg>
+</arguments>
+<msg timestamp="20190427 22:20:35.411" level="INFO">Opening url 'https://localhost:4321/temp/workbench.html'</msg>
+<status status="PASS" endtime="20190427 22:20:35.741" starttime="20190427 22:20:35.407"></status>
+</kw>
+<status status="PASS" endtime="20190427 22:20:35.749" starttime="20190427 22:20:03.354"></status>
+</kw>
+<kw name="Add Web Part">
+<doc>Add the given web part to the page.</doc>
+<arguments>
+<arg>Hello Events</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[@aria-label="Add a new web part in column one"]</arg>
+</arguments>
+<msg timestamp="20190427 22:20:35.765" level="INFO">Clicking button 'xpath://button[@aria-label="Add a new web part in column one"]'.</msg>
+<status status="PASS" endtime="20190427 22:20:35.943" starttime="20190427 22:20:35.763"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[@aria-label="${WebPartTitle}"]</arg>
+</arguments>
+<msg timestamp="20190427 22:20:35.961" level="INFO">Clicking button 'xpath://button[@aria-label="Hello Events"]'.</msg>
+<status status="PASS" endtime="20190427 22:20:36.221" starttime="20190427 22:20:35.950"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath://div[contains(text(),"${WebPartTitle}")]</arg>
+</arguments>
+<status status="PASS" endtime="20190427 22:20:36.378" starttime="20190427 22:20:36.225"></status>
+</kw>
+<status status="PASS" endtime="20190427 22:20:36.379" starttime="20190427 22:20:35.757"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>EduCamp</arg>
+</arguments>
+<msg timestamp="20190427 22:20:36.442" level="INFO">Current page contains text 'EduCamp'.</msg>
+<status status="PASS" endtime="20190427 22:20:36.445" starttime="20190427 22:20:36.381"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Expo IT</arg>
+</arguments>
+<msg timestamp="20190427 22:20:36.497" level="INFO">Current page contains text 'Expo IT'.</msg>
+<status status="PASS" endtime="20190427 22:20:36.497" starttime="20190427 22:20:36.448"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Marketing Workshop</arg>
+</arguments>
+<msg timestamp="20190427 22:20:36.543" level="INFO">Current page contains text 'Marketing Workshop'.</msg>
+<status status="PASS" endtime="20190427 22:20:36.550" starttime="20190427 22:20:36.500"></status>
+</kw>
+<status status="PASS" endtime="20190427 22:20:36.552" critical="yes" starttime="20190427 22:20:03.299"></status>
+</test>
+<status status="PASS" endtime="20190427 22:20:36.572" starttime="20190427 22:20:01.664"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Hello-Events-Tests" pass="1">Hello-Events-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

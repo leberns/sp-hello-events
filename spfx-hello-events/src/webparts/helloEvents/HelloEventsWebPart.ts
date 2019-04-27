@@ -18,9 +18,17 @@ import { EventsListService } from '../../services/basic/EventsListService';
 import { MockEventsListService } from '../../services/basic/MockEventsListService';
 import { ImagesLibService } from '../../services/basic/ImagesLibService';
 import { MockImagesLibService } from '../../services/basic/MockImagesLibService';
+import { any } from 'prop-types';
 
 export interface IHelloEventsWebPartProps {
 }
+
+(<any>window).appStatus = false;
+const updateAppStatus = () => {
+  (<any>window).appStatus = true;
+  console.log("react window.appStatus", (<any>window).appStatus);
+};
+console.log("react window.appStatus", (<any>window).appStatus);
 
 export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEventsWebPartProps> {
 
@@ -44,8 +52,10 @@ export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEven
   }
 
   public render(): void {
+
     const element: React.ReactElement<IHelloEventsProps > = React.createElement(
       HelloEvents, {
+        updateAppStatus: updateAppStatus,
         eventsService: this.eventsService
       }
     );
