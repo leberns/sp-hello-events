@@ -5,12 +5,10 @@ import styles from './EventsListContainer.module.scss';
 import EventsList from '../eventsList/EventsList';
 
 export interface EventsListContainerProps {
-  updateAppStatus: Function;
   eventsService: IEventsService;
 }
 
 export interface EventsListContainerState {
-  isLoading: boolean;
   events: IEventsCollection;
   error: any;
 }
@@ -20,7 +18,6 @@ export default class EventsListContainer extends React.Component<EventsListConta
   constructor(props: EventsListContainerProps) {
     super(props);
     this.state = {
-      isLoading: true,
       events: {items:[]},
       error: null
     };
@@ -56,18 +53,11 @@ export default class EventsListContainer extends React.Component<EventsListConta
     this.fetchEvents();
   }
 
-  public componentDidUpdate() {
-    if (!this.state.isLoading) {
-      this.props.updateAppStatus();
-    }
-  }
-
   private async fetchEvents() {
     try {
       const eventsService = this.props.eventsService;
       const eventsColl = await eventsService.fetchEvents();
       this.setState({
-        isLoading: false,
         events: eventsColl
       });
     }

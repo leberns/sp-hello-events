@@ -8,7 +8,6 @@ export default class HelloEvents extends React.Component<IHelloEventsProps, IHel
   public render(): React.ReactElement<IHelloEventsProps> {
     return (
       <EventsListContainer
-        updateAppStatus={this.props.updateAppStatus}
         eventsService={this.props.eventsService} />
     );
   }

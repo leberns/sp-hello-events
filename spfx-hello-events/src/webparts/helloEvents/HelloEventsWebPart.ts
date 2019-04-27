@@ -23,13 +23,6 @@ import { any } from 'prop-types';
 export interface IHelloEventsWebPartProps {
 }
 
-(<any>window).appStatus = false;
-const updateAppStatus = () => {
-  (<any>window).appStatus = true;
-  console.log("react window.appStatus", (<any>window).appStatus);
-};
-console.log("react window.appStatus", (<any>window).appStatus);
-
 export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEventsWebPartProps> {
 
   private eventsService: IEventsService;
@@ -55,7 +48,6 @@ export default class HelloEventsWebPart extends BaseClientSideWebPart<IHelloEven
 
     const element: React.ReactElement<IHelloEventsProps > = React.createElement(
       HelloEvents, {
-        updateAppStatus: updateAppStatus,
         eventsService: this.eventsService
       }
     );

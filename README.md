@@ -19,6 +19,7 @@ Item|Description
 Hello Events Installer | installer (under construction)
 [SPFx Hello Events](./spfx-hello-events) | SharePoint Framework Solution to manage events
 [User stories and tasks](https://github.com/leberns/sp-hello-events/projects) | Project planning
+[Acceptance tests](https://github.com/leberns/sp-hello-events/tree/master/acceptance-tests) | End to end tests based on the user stories
 
 ## Features
 
