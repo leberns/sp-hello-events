@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generator="Robot 3.1.1 (IronPython 2.7.9 on cli)" generated="20190428 17:43:22.010">
+<suite name="Hello-Events-Tests" id="s1" source="C:\Dev\GitHub\leberns\sp-hello-events\acceptance-tests\hello-events-tests.robot">
+<kw name="Open Page" type="setup">
+<doc>Open the page given in the url</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20190428 17:43:23.776" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:4321/temp/workbench.html'.</msg>
+<status status="PASS" endtime="20190428 17:43:55.600" starttime="20190428 17:43:23.754"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>".sharepoint.com/" in "${url}"</arg>
+<arg>Login</arg>
+</arguments>
+<status status="PASS" endtime="20190428 17:43:55.616" starttime="20190428 17:43:55.606"></status>
+</kw>
+<kw name="Add Web Part">
+<doc>Add the given web part to the page</doc>
+<arguments>
+<arg>Hello Events</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://button[@aria-label="Add a new web part in column one"]</arg>
+</arguments>
+<status status="PASS" endtime="20190428 17:43:55.695" starttime="20190428 17:43:55.621"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[@aria-label="Add a new web part in column one"]</arg>
+</arguments>
+<msg timestamp="20190428 17:43:55.702" level="INFO">Clicking button 'xpath://button[@aria-label="Add a new web part in column one"]'.</msg>
+<status status="PASS" endtime="20190428 17:43:55.899" starttime="20190428 17:43:55.697"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://button[@aria-label="${webPartTitle}"]</arg>
+</arguments>
+<status status="PASS" endtime="20190428 17:43:56.025" starttime="20190428 17:43:55.904"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://button[@aria-label="${webPartTitle}"]</arg>
+</arguments>
+<msg timestamp="20190428 17:43:56.039" level="INFO">Clicking button 'xpath://button[@aria-label="Hello Events"]'.</msg>
+<status status="PASS" endtime="20190428 17:43:56.214" starttime="20190428 17:43:56.030"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath://div[contains(text(),"${webPartTitle}")]</arg>
+</arguments>
+<status status="PASS" endtime="20190428 17:43:56.269" starttime="20190428 17:43:56.222"></status>
+</kw>
+<status status="PASS" endtime="20190428 17:43:56.277" starttime="20190428 17:43:55.618"></status>
+</kw>
+<status status="PASS" endtime="20190428 17:43:56.284" starttime="20190428 17:43:23.726"></status>
+</kw>
+<test name="display events from an Events list" id="s1-t1">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>EduCamp</arg>
+</arguments>
+<status status="PASS" endtime="20190428 17:43:56.420" starttime="20190428 17:43:56.314"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>EduCamp</arg>
+</arguments>
+<msg timestamp="20190428 17:43:56.474" level="INFO">Current page contains text 'EduCamp'.</msg>
+<status status="PASS" endtime="20190428 17:43:56.474" starttime="20190428 17:43:56.438"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Expo IT</arg>
+</arguments>
+<msg timestamp="20190428 17:43:56.513" level="INFO">Current page contains text 'Expo IT'.</msg>
+<status status="PASS" endtime="20190428 17:43:56.514" starttime="20190428 17:43:56.476"></status>
+</kw>
+<status status="PASS" endtime="20190428 17:43:56.517" critical="yes" starttime="20190428 17:43:56.287"></status>
+</test>
+<status status="PASS" endtime="20190428 17:43:56.533" starttime="20190428 17:43:22.090"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Hello-Events-Tests" pass="1">Hello-Events-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
