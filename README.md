@@ -10,7 +10,7 @@ It is relatively common that solutions to manage Events or News within an organi
 
 Item|Description
 ----|-----------
-[Hello Events Installer](./installers) | installer
+[Hello Events Installer](./installers) | Installer
 [SPFx Hello Events](./spfx-hello-events) | SharePoint Framework Solution to manage events
 [User stories and tasks](https://github.com/leberns/sp-hello-events/projects) | Project planning
 [Acceptance tests](https://github.com/leberns/sp-hello-events/tree/master/acceptance-tests) | End to end tests based on the user stories
@@ -37,4 +37,5 @@ This project uses to following development concepts and resources.
 
 Version|Date|Comments
 -------|----|--------
-0.0.1 | 26th April 2019 | display events from an Events list
+0.0.1 | 26th April 2019 | display events from an Events Catalog list
+0.0.2 | 04th May 2019 | implemented an installer based on the PnP Provision Engine
