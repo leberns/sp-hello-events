@@ -1,6 +1,7 @@
 # Saves the customizations made on a site as a template for the PnP Provision Engine
 
 $TemplateFilePath = ".\hello-events-template-DRAFT.xml"
+$TraceLogFilePath = ".\save-template.log"
 $TemplateSiteUrl = Read-Host "Template site url (ex.: https://contoso.sharepoint.com/sites/CompanyEvents)"
 
 Write-Host "Provide the credentials to connect to the site as an administrator"
