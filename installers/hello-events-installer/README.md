@@ -34,6 +34,10 @@ The default data like list items and files were added in a separeted step to the
 
 This data is represented by DataRows and Files elements in the template file.
 
+### Template Cleanup
+
+After saving the template to a file the common fields, lists and content types that are not specific to the solution were manually removed from the template.
+
 ## Applying the Provision Template
 
 Use the script [`set-template.ps1`](./set-template.ps1) to apply the template to a site.
