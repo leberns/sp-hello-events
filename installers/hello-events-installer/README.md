@@ -42,4 +42,4 @@ Anything else that is not specific to your customization shoud be challenged, if
 
 ## Applying the Provision Template
 
-Use the script [`set-template.ps1`](./set-template.ps1) to apply the template [`hello-events-template.xml`](./hello-events-template.xml) to a site.
+Execute the script [`set-template.ps1`](./set-template.ps1) to apply the template [`hello-events-template.xml`](./hello-events-template.xml) to the given site.
