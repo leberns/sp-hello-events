@@ -1,8 +1,8 @@
-# Provision Hello Events
+# Hello Events Installer
 
-This script provisions the structures and data needed for the Hello Events solution to work on a site.
+These scripts provision the structures and data needed for the Hello Events solution to work on a site.
 
-It creates the lists using the PnP Provision Engine, for details see [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
+It uses the PnP Provision Engine, for details see [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
 
 ## Prerequisites
 
@@ -23,6 +23,10 @@ The PnP PowerShell is needed because the installer uses a few commands directly 
 The site columns, site content types and lists are defined in a provision template. This template can be generated based on the structures of a given site and saved on a file for later use.
 
 The script [`save-template.ps1`](./save-template.ps1) generates this template file.
+
+Template file: [`hello-events-template.xml`](./hello-events-template.xml)
+
+Note: as the template file is already part of the installer there is no need to execute this script every time again.
 
 ### Data Initialization
 
