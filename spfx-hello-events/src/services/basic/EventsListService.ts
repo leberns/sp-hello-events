@@ -4,7 +4,7 @@ import { IEventsListService } from './IEventsListService';
 
 export class EventsListService implements IEventsListService {
 
-  private readonly eventsListTitle = 'Events';
+  private readonly eventsListTitle = 'Events Catalog';
 
   public async fetchEventItems(): Promise<any[]> {
     const eventsList = sp.web.lists.getByTitle(this.eventsListTitle);

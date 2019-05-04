@@ -10,7 +10,7 @@ It is relatively common that solutions to manage Events or News within an organi
 
 Item|Description
 ----|-----------
-[Hello Events Installer](./installers/hello-events-installer/README.md) | installer
+[Hello Events Installer](./installers) | installer
 [SPFx Hello Events](./spfx-hello-events) | SharePoint Framework Solution to manage events
 [User stories and tasks](https://github.com/leberns/sp-hello-events/projects) | Project planning
 [Acceptance tests](https://github.com/leberns/sp-hello-events/tree/master/acceptance-tests) | End to end tests based on the user stories
