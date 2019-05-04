@@ -237,7 +237,7 @@
         </pnp:ListInstance>
       </pnp:Lists>
       <pnp:Files>
-        <pnp:File Src="team-event.png" Folder="EventContentImages" Overwrite="true" Level="Published" />
+        <pnp:File Src="./default-files/team-event.png" Folder="EventContentImages" Overwrite="true" Level="Published" />
       </pnp:Files>
     </pnp:ProvisioningTemplate>
   </pnp:Templates>
