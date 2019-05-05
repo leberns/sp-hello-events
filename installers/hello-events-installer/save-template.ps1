@@ -29,7 +29,7 @@ Write-Host "Adding list items from the existing $EventCategoriesListTitle list t
 Add-PnPDataRowsToProvisioningTemplate -Path $EventCategoriesItemsFilePath -List $EventCategoriesListTitle -Query "<View></View>" -Fields "Title"
 
 $EventsListTitle = "Events Catalog"
-$EventItemsFilePath = ".\events-data.xml"
+$EventItemsFilePath = ".\events-data-DRAFT.xml"
 Write-Host "Adding list items from the existing $EventsListTitle list to the template; element DataRows / DataRow ..."
 Add-PnPDataRowsToProvisioningTemplate -Path $EventItemsFilePath -List $EventsListTitle -Query "<View></View>" -Fields "Title","HEvDescription","HEvStart","HEvEnd","HEvCategoryRef","HEvImageRef","HEvLocation"
 
