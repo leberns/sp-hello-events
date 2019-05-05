@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/07/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.7.1903.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-ACBD4AE32A3747ACB346417BFBF48AB8">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-ACBD4AE32A3747ACB346417BFBF48AB8" Version="1" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Events Catalog" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/EventsCatalog" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="10" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableAttachments="false" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/EventsCatalog/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/EventsCatalog/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/EventsCatalog/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=45" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:DataRows UpdateBehavior="Overwrite">
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">EduCamp 2019</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvDescription">One the first day we are having a workshop about Office 365 and on the second day a city tour.</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvStart">17/08/2019 07:00:00</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvEnd">17/08/2019 09:00:00</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvCategoryRef">2</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvImageRef">1</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvLocation">{"EntityType":"LocalBusiness","LocationSource":"Bing","LocationUri":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x8074816313251827257?setLang=de-CH","UniqueId":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x8074816313251827257?setLang=de-CH","DisplayName":"Luzern Bahnhof","Address":{"Street":"Zentralstrasse 1","City":"Luzern","State":"LU","CountryOrRegion":"CH","PostalCode":"6002"},"Coordinates":{"Latitude":47.049949645996094,"Longitude":8.309470176696777}}</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Expo IT</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvDescription">Exposition where we are showing our products to the public.</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvStart">25/05/2019 12:00:00</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvEnd">25/05/2019 14:00:00</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvCategoryRef">1</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvImageRef">1</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvLocation">{"EntityType":"LocalBusiness","LocationSource":"Bing","LocationUri":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x11738268715769799039?setLang=de-CH","UniqueId":"https://www.bingapis.com/api/v6/localbusinesses/YN9003x11738268715769799039?setLang=de-CH","DisplayName":"MCH Messe Schweiz (Zürich) AG","Address":{"Street":"Wallisellenstrasse 49","City":"Zürich","State":"Zurich","CountryOrRegion":"CH","PostalCode":"8050"},"Coordinates":{"Latitude":47.41141128540039,"Longitude":8.553359985351562}}</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Empty Test</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvDescription" />
+              <pnp:DataValue FieldName="HEvStart">18/04/2019 11:00:00</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvEnd">18/04/2019 03:04:00</pnp:DataValue>
+              <pnp:DataValue FieldName="HEvCategoryRef" />
+              <pnp:DataValue FieldName="HEvImageRef" />
+              <pnp:DataValue FieldName="HEvLocation" />
+            </pnp:DataRow>
+          </pnp:DataRows>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
