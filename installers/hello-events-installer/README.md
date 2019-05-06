@@ -81,7 +81,7 @@ Metadata file example: [`event-images-metadata.json`](./event-images-metadata.js
 
 The path separator of the `Src` attribute in the template has to be the same as in the Metadata file (with character escaping), otherwise the mapping does not work. 
 
-Ex., path in template and in Metadata file using backslash (\):
+Ex., path in template and in Metadata file using backslash (\\):
 
 ```Xml
 <pnp:Directory Src=".\event-images" Folder="EventContentImages" Overwrite="true"
