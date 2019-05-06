@@ -81,7 +81,7 @@ Metadata file example: [`event-images-metadata.json`](./event-images-metadata.js
 
 The path separator of the `Src` attribute in the template has to be the same as in the Metadata file (with character escaping), otherwise the mapping does not work. 
 
-Ex., path in template and in Metadata file using backslash (\\):
+Ex., `pnp:Directory` in template and Metadata file - note the paths using backslash (\\):
 
 ```Xml
 <pnp:Directory Src=".\event-images" Folder="EventContentImages" Overwrite="true"
@@ -92,7 +92,7 @@ Ex., path in template and in Metadata file using backslash (\\):
 {".\\event-images\\team-event.png":{"Title":"Team Event"}}
 ```
 
-#### Avoiding Double Creation of Items
+#### Avoiding Multiple Creation of same Items
 
 See the attribute `KeyColumn` as described above.
 
