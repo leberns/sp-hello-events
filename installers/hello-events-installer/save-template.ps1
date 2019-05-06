@@ -8,9 +8,9 @@ $TraceLogFilePath = ".\save-template.log"
 Write-Host "Setting trace log to log file $TraceLogFilePath ..."
 Set-PnPTraceLog -On -Level Debug -LogFile $TraceLogFilePath
 
-$TemplateSiteUrl = Read-Host "Template site url (ex.: https://contoso.sharepoint.com/sites/CompanyEvents)"
-Write-Host "Connecting to the site $TargetSiteUrl ..."
-Connect-PnPOnline -Url $TemplateSiteUrl -Credentials $UserCredential
+$SiteUrl = Read-Host "Template site url (ex.: https://contoso.sharepoint.com/sites/CompanyEvents)"
+Write-Host "Connecting to the site $SiteUrl ..."
+Connect-PnPOnline -Url $SiteUrl -Credentials $UserCredential
 
 $TemplateFilePath = ".\hello-events-template-DRAFT.xml"
 Write-Host "Saving the site structures to the template file $TemplateFilePath ..."
@@ -20,17 +20,17 @@ Get-PnPProvisioningTemplate -Out $TemplateFilePath -Handlers Fields,ContentTypes
 
 $EventsLogoFilePath = ".\site-assets\hello-events-logo.png"
 $EventsLogoTargetUrl = "SiteAssets"
-Write-Host "Adding file references to the template; elements: Files / File ..."
+Write-Host "Adding file references to the template in the elements: Files / File ..."
 Add-PnPFileToProvisioningTemplate -Path $TemplateFilePath -Source $EventsLogoFilePath -Folder $EventsLogoTargetUrl -FileLevel Published -FileOverwrite:$true
 
+Write-Host "Adding list items from the existing lists to the template in the elements DataRows / DataRow ..."
+
 $EventCategoriesListTitle = "Event Categories"
-$EventCategoriesItemsFilePath = ".\event-categories-data-DRAFT.xml"
-Write-Host "Adding list items from the existing $EventCategoriesListTitle list to the template; element DataRows / DataRow ..."
-Add-PnPDataRowsToProvisioningTemplate -Path $EventCategoriesItemsFilePath -List $EventCategoriesListTitle -Query "<View></View>" -Fields "Title"
+Write-Host $EventCategoriesListTitle
+Add-PnPDataRowsToProvisioningTemplate -Path $TemplateFilePath -List $EventCategoriesListTitle -Query "<View></View>" -Fields "Title"
 
 $EventsListTitle = "Events Catalog"
-$EventItemsFilePath = ".\events-data-DRAFT.xml"
-Write-Host "Adding list items from the existing $EventsListTitle list to the template; element DataRows / DataRow ..."
-Add-PnPDataRowsToProvisioningTemplate -Path $EventItemsFilePath -List $EventsListTitle -Query "<View></View>" -Fields "Title","HEvDescription","HEvStart","HEvEnd","HEvCategoryRef","HEvImageRef","HEvLocation"
+Write-Host $EventCategoriesListTitle
+Add-PnPDataRowsToProvisioningTemplate -Path $TemplateFilePath -List $EventsListTitle -Query "<View></View>" -Fields "Title","HEvDescription","HEvStart","HEvEnd","HEvCategoryRef","HEvImageRef","HEvLocation"
 
 Write-Host "Done."

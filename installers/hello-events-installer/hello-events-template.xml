@@ -146,11 +146,23 @@
             <pnp:Webhook ServerNotificationUrl="https://7-westeurope1.pushp.svc.ms/notifications?token=w3-3621c885-7a22-4206-bd74-118722cc4715" ExpiresInDays="1" />
             <pnp:Webhook ServerNotificationUrl="https://7-westeurope1.pushp.svc.ms/notifications?token=w1-406d0d13-c4bb-4dad-8029-383b41f0e18d" ExpiresInDays="1" />
           </pnp:Webhooks>
+		  <pnp:DataRows KeyColumn="Title" UpdateBehavior="Overwrite">
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Sales</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Education</pnp:DataValue>
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Social</pnp:DataValue>
+            </pnp:DataRow>
+          </pnp:DataRows>
         </pnp:ListInstance>
         <pnp:ListInstance Title="Events Catalog" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/EventsCatalog" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="10" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" ContentTypesEnabled="true" EnableAttachments="false" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/EventsCatalog/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/EventsCatalog/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/EventsCatalog/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=45" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01000A65544010EBEC4D90EE42FD990F1B0B" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+			<pnp:ContentTypeBinding ContentTypeID="0x01" Remove="true"/>
           </pnp:ContentTypeBindings>
           <pnp:Views>
             <View Name="{5BD9C014-2183-4683-9FBB-58D24AC5BD93}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/CompanyEvents/Lists/EventsCatalog/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=46">
@@ -197,8 +209,8 @@
         </pnp:ListInstance>
       </pnp:Lists>
       <pnp:Files>
-        <pnp:File Src="./site-assets/hello-events-logo.png" Folder="SiteAssets" Overwrite="true" Level="Published" />
-        <pnp:Directory Src="./event-images" Folder="EventContentImages" Overwrite="true"
+        <pnp:File Src=".\site-assets\hello-events-logo.png" Folder="SiteAssets" Overwrite="true" Level="Published" />
+        <pnp:Directory Src=".\event-images" Folder="EventContentImages" Overwrite="true"
           Recursive="false" MetadataMappingFile=".\event-images-metadata.json" />
       </pnp:Files>
     </pnp:ProvisioningTemplate>
