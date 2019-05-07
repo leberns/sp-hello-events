@@ -18,6 +18,12 @@ The PnP PowerShell is needed because the installer uses a few commands directly 
 
 * Organise an user which is site collection administrator in order to connect to SharePoint. It could be a tenant administrator for development. The credentials will be requested by the installer scripts.
 
+## Applying the Provisioning Template
+
+In short, execute the PowerShell script [`set-template.ps1`](./set-template.ps1) to apply the templates on the given site.
+
+For details see the code, template files and data files [here](./) and the other sections in this document.
+
 ## Creating the Provisioning Template
 
 The site columns, site content types and lists are defined in a provisioning template. This template can be generated based on the structures of a given site and saved on a file for later use.
@@ -50,7 +56,7 @@ The default data like list items and files are added in a separeted step to the 
 
 ## Template Preparation
 
-The saved template is a base for the provisioning, but it has to be manually updated.
+The saved template is a base for the provisioning, but it has to be manually updated as described below.
 
 ### Template Cleanup
 
@@ -100,12 +106,6 @@ See the attribute `KeyColumn` as described above.
 ### Setting the Type of Note Fields
 
 Review if Note fields should be `Compatible` or `FullHTML` in attribute `RichTextMode`.
-
-## Applying the Provisioning Template
-
-Execute the script [`set-template.ps1`](./set-template.ps1) to apply the template [`hello-events-template.xml`](./hello-events-template.xml) to the given site.
-
-This will create the structures and set the initial data for the solution on the site.
 
 ## Further Reading
 
