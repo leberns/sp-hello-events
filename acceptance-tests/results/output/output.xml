@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generator="Robot 3.1.1 (IronPython 2.7.9 on cli)" generated="20190428 17:43:22.010">
+<robot rpa="false" generator="Robot 3.1.1 (IronPython 2.7.9 on cli)" generated="20190507 12:25:57.728">
 <suite name="Hello-Events-Tests" id="s1" source="C:\Dev\GitHub\leberns\sp-hello-events\acceptance-tests\hello-events-tests.robot">
 <kw name="Open Page" type="setup">
 <doc>Open the page given in the url</doc>
@@ -9,8 +9,8 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 </arguments>
-<msg timestamp="20190428 17:43:23.776" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:4321/temp/workbench.html'.</msg>
-<status status="PASS" endtime="20190428 17:43:55.600" starttime="20190428 17:43:23.754"></status>
+<msg timestamp="20190507 12:25:59.427" level="INFO">Opening browser 'Chrome' to base url 'https://adessoleandrobernsmueller.sharepoint.com/sites/CompanyEventsD/_layouts/15/workbench.aspx'.</msg>
+<status status="PASS" endtime="20190507 12:26:33.334" starttime="20190507 12:25:59.411"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -18,53 +18,234 @@
 <arg>".sharepoint.com/" in "${url}"</arg>
 <arg>Login</arg>
 </arguments>
-<status status="PASS" endtime="20190428 17:43:55.616" starttime="20190428 17:43:55.606"></status>
+<kw name="Login">
+<doc>Login to Office 365</doc>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>WARN</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:33.363" starttime="20190507 12:26:33.359"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://input[@name="loginfmt"]</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:34.556" starttime="20190507 12:26:33.365"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>xpath://input[@name="loginfmt"]</arg>
+<arg>${username}</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:34.789" starttime="20190507 12:26:34.560"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://input[@type="submit"]</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:34.895" starttime="20190507 12:26:34.796"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:35.929" starttime="20190507 12:26:34.905"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://input[@name="passwd"]</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:35.981" starttime="20190507 12:26:35.932"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>xpath://input[@name="passwd"]</arg>
+<arg>${password}</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:36.101" starttime="20190507 12:26:35.984"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://input[@type="submit"]</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:36.659" starttime="20190507 12:26:36.104"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>No</arg>
+</arguments>
+<status status="PASS" endtime="20190507 12:26:40.101" starttime="20190507 12:26:36.660"></status>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<arguments>
+<arg>TRACE</arg>
+</arguments>
+<msg timestamp="20190507 12:26:40.106" level="INFO">Log level changed from WARN to TRACE.</msg>
+<msg timestamp="20190507 12:26:40.106" level="TRACE">Return: 'WARN'</msg>
+<status status="PASS" endtime="20190507 12:26:40.119" starttime="20190507 12:26:40.102"></status>
+</kw>
+<msg timestamp="20190507 12:26:40.132" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:40.134" starttime="20190507 12:26:33.352"></status>
+</kw>
+<msg timestamp="20190507 12:26:40.134" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:40.135" starttime="20190507 12:26:33.339"></status>
 </kw>
 <kw name="Add Web Part">
 <doc>Add the given web part to the page</doc>
 <arguments>
 <arg>Hello Events</arg>
 </arguments>
+<msg timestamp="20190507 12:26:40.138" level="TRACE">Arguments: [ ${webPartTitle}='Hello Events' ]</msg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
 <arg>xpath://button[@aria-label="Add a new web part in column one"]</arg>
 </arguments>
-<status status="PASS" endtime="20190428 17:43:55.695" starttime="20190428 17:43:55.621"></status>
+<msg timestamp="20190507 12:26:40.141" level="TRACE">Arguments: [ 'xpath://button[@aria-label="Add a new web part in column one"]' ]</msg>
+<msg timestamp="20190507 12:26:40.161" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:40.163" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:40.182" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:40.185" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:40.393" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:40.397" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:40.414" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:40.421" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:40.631" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:40.648" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:40.666" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:40.668" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:40.869" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:40.871" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:41.326" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:41.335" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:41.539" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:41.548" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:41.587" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:41.591" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:41.799" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:41.801" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:41.810" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 104</msg>
+<msg timestamp="20190507 12:26:41.814" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:41.815" level="DEBUG">GET http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/displayed {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-1"}</msg>
+<msg timestamp="20190507 12:26:41.820" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:41.842" level="DEBUG">http://127.0.0.1:62482 "GET /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/displayed HTTP/1.1" 200 72</msg>
+<msg timestamp="20190507 12:26:41.845" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:41.846" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:41.847" starttime="20190507 12:26:40.140"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://button[@aria-label="Add a new web part in column one"]</arg>
 </arguments>
-<msg timestamp="20190428 17:43:55.702" level="INFO">Clicking button 'xpath://button[@aria-label="Add a new web part in column one"]'.</msg>
-<status status="PASS" endtime="20190428 17:43:55.899" starttime="20190428 17:43:55.697"></status>
+<msg timestamp="20190507 12:26:41.854" level="TRACE">Arguments: [ 'xpath://button[@aria-label="Add a new web part in column one"]' ]</msg>
+<msg timestamp="20190507 12:26:41.855" level="INFO">Clicking button 'xpath://button[@aria-label="Add a new web part in column one"]'.</msg>
+<msg timestamp="20190507 12:26:41.857" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:41.861" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:41.969" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 104</msg>
+<msg timestamp="20190507 12:26:41.971" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:41.977" level="DEBUG">GET http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/name {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-1"}</msg>
+<msg timestamp="20190507 12:26:41.983" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.169" level="DEBUG">http://127.0.0.1:62482 "GET /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/name HTTP/1.1" 200 76</msg>
+<msg timestamp="20190507 12:26:42.186" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.188" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Add a new web part in column one\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:42.190" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.266" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 104</msg>
+<msg timestamp="20190507 12:26:42.269" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.278" level="DEBUG">GET http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/name {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-1"}</msg>
+<msg timestamp="20190507 12:26:42.284" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.296" level="DEBUG">http://127.0.0.1:62482 "GET /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/name HTTP/1.1" 200 76</msg>
+<msg timestamp="20190507 12:26:42.301" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.302" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/click {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-1"}</msg>
+<msg timestamp="20190507 12:26:42.303" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.367" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-1/click HTTP/1.1" 200 72</msg>
+<msg timestamp="20190507 12:26:42.368" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.368" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:42.369" starttime="20190507 12:26:41.848"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
 <arg>xpath://button[@aria-label="${webPartTitle}"]</arg>
 </arguments>
-<status status="PASS" endtime="20190428 17:43:56.025" starttime="20190428 17:43:55.904"></status>
+<msg timestamp="20190507 12:26:42.371" level="TRACE">Arguments: [ 'xpath://button[@aria-label="Hello Events"]' ]</msg>
+<msg timestamp="20190507 12:26:42.374" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Hello Events\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:42.374" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.393" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:42.396" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.597" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Hello Events\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:42.600" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.611" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:42.614" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.815" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Hello Events\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:42.816" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.927" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 104</msg>
+<msg timestamp="20190507 12:26:42.929" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.930" level="DEBUG">GET http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/displayed {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-2"}</msg>
+<msg timestamp="20190507 12:26:42.931" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.966" level="DEBUG">http://127.0.0.1:62482 "GET /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/displayed HTTP/1.1" 200 72</msg>
+<msg timestamp="20190507 12:26:42.968" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.968" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:42.969" starttime="20190507 12:26:42.369"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://button[@aria-label="${webPartTitle}"]</arg>
 </arguments>
-<msg timestamp="20190428 17:43:56.039" level="INFO">Clicking button 'xpath://button[@aria-label="Hello Events"]'.</msg>
-<status status="PASS" endtime="20190428 17:43:56.214" starttime="20190428 17:43:56.030"></status>
+<msg timestamp="20190507 12:26:42.978" level="TRACE">Arguments: [ 'xpath://button[@aria-label="Hello Events"]' ]</msg>
+<msg timestamp="20190507 12:26:42.979" level="INFO">Clicking button 'xpath://button[@aria-label="Hello Events"]'.</msg>
+<msg timestamp="20190507 12:26:42.979" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Hello Events\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:42.981" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:42.993" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 104</msg>
+<msg timestamp="20190507 12:26:42.994" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:42.995" level="DEBUG">GET http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/name {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-2"}</msg>
+<msg timestamp="20190507 12:26:42.995" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.003" level="DEBUG">http://127.0.0.1:62482 "GET /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/name HTTP/1.1" 200 76</msg>
+<msg timestamp="20190507 12:26:43.004" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:43.005" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//button[@aria-label=\"Hello Events\"]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:43.006" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.014" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 104</msg>
+<msg timestamp="20190507 12:26:43.016" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:43.016" level="DEBUG">GET http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/name {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-2"}</msg>
+<msg timestamp="20190507 12:26:43.017" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.022" level="DEBUG">http://127.0.0.1:62482 "GET /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/name HTTP/1.1" 200 76</msg>
+<msg timestamp="20190507 12:26:43.023" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:43.023" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/click {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": "0.9383788437750125-2"}</msg>
+<msg timestamp="20190507 12:26:43.024" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.224" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/element/0.9383788437750125-2/click HTTP/1.1" 200 72</msg>
+<msg timestamp="20190507 12:26:43.225" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:43.225" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:43.226" starttime="20190507 12:26:42.975"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>xpath://div[contains(text(),"${webPartTitle}")]</arg>
 </arguments>
-<status status="PASS" endtime="20190428 17:43:56.269" starttime="20190428 17:43:56.222"></status>
+<msg timestamp="20190507 12:26:43.228" level="TRACE">Arguments: [ 'xpath://div[contains(text(),"Hello Events")]' ]</msg>
+<msg timestamp="20190507 12:26:43.234" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//div[contains(text(),\"Hello Events\")]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:43.235" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.251" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20190507 12:26:43.253" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:43.253" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:43.254" starttime="20190507 12:26:43.227"></status>
 </kw>
-<status status="PASS" endtime="20190428 17:43:56.277" starttime="20190428 17:43:55.618"></status>
+<msg timestamp="20190507 12:26:43.254" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:43.254" starttime="20190507 12:26:40.136"></status>
 </kw>
-<status status="PASS" endtime="20190428 17:43:56.284" starttime="20190428 17:43:23.726"></status>
+<msg timestamp="20190507 12:26:43.254" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:43.255" starttime="20190507 12:25:59.379"></status>
 </kw>
 <test name="display events from an Events list" id="s1-t1">
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
@@ -72,27 +253,77 @@
 <arguments>
 <arg>EduCamp</arg>
 </arguments>
-<status status="PASS" endtime="20190428 17:43:56.420" starttime="20190428 17:43:56.314"></status>
+<msg timestamp="20190507 12:26:43.304" level="TRACE">Arguments: [ 'EduCamp' ]</msg>
+<msg timestamp="20190507 12:26:43.305" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:43.306" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.324" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:43.326" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:43.529" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:43.534" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.577" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:43.581" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:43.783" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:43.801" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:43.823" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:43.828" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.108" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:44.115" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.128" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:44.132" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.333" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:44.334" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.354" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:44.356" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.560" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:44.582" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.606" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 70</msg>
+<msg timestamp="20190507 12:26:44.610" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.810" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:44.811" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.822" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 1180</msg>
+<msg timestamp="20190507 12:26:44.823" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.825" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:44.828" starttime="20190507 12:26:43.302"></status>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>EduCamp</arg>
 </arguments>
-<msg timestamp="20190428 17:43:56.474" level="INFO">Current page contains text 'EduCamp'.</msg>
-<status status="PASS" endtime="20190428 17:43:56.474" starttime="20190428 17:43:56.438"></status>
+<msg timestamp="20190507 12:26:44.842" level="TRACE">Arguments: [ 'EduCamp' ]</msg>
+<msg timestamp="20190507 12:26:44.844" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/frame {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": null}</msg>
+<msg timestamp="20190507 12:26:44.845" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.850" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/frame HTTP/1.1" 200 72</msg>
+<msg timestamp="20190507 12:26:44.851" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.852" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'EduCamp')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:44.852" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.864" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 1180</msg>
+<msg timestamp="20190507 12:26:44.865" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.867" level="INFO">Current page contains text 'EduCamp'.</msg>
+<msg timestamp="20190507 12:26:44.867" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:44.868" starttime="20190507 12:26:44.839"></status>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current page contains ``text``.</doc>
 <arguments>
 <arg>Expo IT</arg>
 </arguments>
-<msg timestamp="20190428 17:43:56.513" level="INFO">Current page contains text 'Expo IT'.</msg>
-<status status="PASS" endtime="20190428 17:43:56.514" starttime="20190428 17:43:56.476"></status>
+<msg timestamp="20190507 12:26:44.870" level="TRACE">Arguments: [ 'Expo IT' ]</msg>
+<msg timestamp="20190507 12:26:44.872" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/frame {"sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "id": null}</msg>
+<msg timestamp="20190507 12:26:44.873" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.876" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/frame HTTP/1.1" 200 72</msg>
+<msg timestamp="20190507 12:26:44.877" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.878" level="DEBUG">POST http://127.0.0.1:62482/session/89799b0fba91482e49ebb4bb09b5c66d/elements {"value": "//*[contains(., 'Expo IT')]", "sessionId": "89799b0fba91482e49ebb4bb09b5c66d", "using": "xpath"}</msg>
+<msg timestamp="20190507 12:26:44.878" level="DEBUG">Resetting dropped connection: 127.0.0.1</msg>
+<msg timestamp="20190507 12:26:44.895" level="DEBUG">http://127.0.0.1:62482 "POST /session/89799b0fba91482e49ebb4bb09b5c66d/elements HTTP/1.1" 200 1180</msg>
+<msg timestamp="20190507 12:26:44.896" level="DEBUG">Finished Request</msg>
+<msg timestamp="20190507 12:26:44.899" level="INFO">Current page contains text 'Expo IT'.</msg>
+<msg timestamp="20190507 12:26:44.900" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20190507 12:26:44.900" starttime="20190507 12:26:44.869"></status>
 </kw>
-<status status="PASS" endtime="20190428 17:43:56.517" critical="yes" starttime="20190428 17:43:56.287"></status>
+<status status="PASS" endtime="20190507 12:26:44.902" critical="yes" starttime="20190507 12:26:43.257"></status>
 </test>
-<status status="PASS" endtime="20190428 17:43:56.533" starttime="20190428 17:43:22.090"></status>
+<status status="PASS" endtime="20190507 12:26:44.925" starttime="20190507 12:25:57.805"></status>
 </suite>
 <statistics>
 <total>

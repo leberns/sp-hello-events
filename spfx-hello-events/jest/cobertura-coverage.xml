@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="144" lines-covered="142" line-rate="0.9861" branches-valid="40" branches-covered="35" branch-rate="0.875" timestamp="1557222063683" complexity="0" version="0.1">
+<coverage lines-valid="144" lines-covered="142" line-rate="0.9861" branches-valid="40" branches-covered="35" branch-rate="0.875" timestamp="1557224280188" complexity="0" version="0.1">
   <sources>
     <source>C:\Dev\GitHub\leberns\sp-hello-events\spfx-hello-events</source>
   </sources>

@@ -2,7 +2,11 @@
 
 ## Purpose
 
-This SharePoint Framework project implements a web part to display the events as loaded from a list of events in SharePoint.
+This SharePoint Framework project implements a client side web part to display the events as loaded from a list of events in SharePoint.
+
+Example of the client side web part Hello Events:
+
+![image](../images/hello-events-web-part.png)
 
 ## Prerequisites
 

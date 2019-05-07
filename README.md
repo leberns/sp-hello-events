@@ -36,9 +36,21 @@ This project uses to following development concepts and resources.
 
 ## Demo Images
 
-### Client Side Hello Events Web Part
+Client side web part Hello Events:
 
 ![image](./images/hello-events-web-part.png)
+
+Hello Events web part item:
+
+![image](./images/hello-events-web-part-item.png)
+
+Jest tests example:
+
+![image](./images/jest-tests-example.png)
+
+Acceptance tests example:
+
+![image](./images/acceptance-tests-example.png)
 
 ## Version History
 
