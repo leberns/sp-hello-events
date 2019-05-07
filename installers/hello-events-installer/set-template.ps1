@@ -1,4 +1,4 @@
-# Applies the template(s) to a site using the PnP Provision Engine
+# Applies the template(s) to a site using the PnP Provisioning Engine
 
 Write-Host "Provide the credentials to connect to the target site as an administrator"
 Write-Host "Ex.: JohnBlue@contoso.onmicrosoft.com"

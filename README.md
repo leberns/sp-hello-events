@@ -39,4 +39,4 @@ This project uses to following development concepts and resources.
 Version|Date|Comments
 -------|----|--------
 0.0.1 | 26th April 2019 | display events from an Events Catalog list
-0.0.2 | 04th May 2019 | implemented an installer based on the PnP Provision Engine
+0.0.2 | 04th May 2019 | implemented an installer based on the PnP Provisioning Engine

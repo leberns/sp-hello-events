@@ -20,7 +20,7 @@ The PnP PowerShell is needed because the installer uses a few commands directly 
 
 ## Creating the Provisioning Template
 
-The site columns, site content types and lists are defined in a provision template. This template can be generated based on the structures of a given site and saved on a file for later use.
+The site columns, site content types and lists are defined in a provisioning template. This template can be generated based on the structures of a given site and saved on a file for later use.
 
 The script [`save-template.ps1`](./save-template.ps1) generates this template file.
 
@@ -101,7 +101,7 @@ See the attribute `KeyColumn` as described above.
 
 Review if Note fields should be `Compatible` or `FullHTML` in attribute `RichTextMode`.
 
-## Applying the Provision Template
+## Applying the Provisioning Template
 
 Execute the script [`set-template.ps1`](./set-template.ps1) to apply the template [`hello-events-template.xml`](./hello-events-template.xml) to the given site.
 

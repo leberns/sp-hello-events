@@ -1,4 +1,4 @@
-# Saves the customizations made on a site as a template for the PnP Provision Engine
+# Saves the customizations made on a site as a template for the PnP Provisioning Engine
 
 Write-Host "Provide the credentials to connect to the site as an administrator"
 Write-Host "Ex.: JohnBlue@contoso.onmicrosoft.com"
