@@ -50,7 +50,7 @@ The default data like list items and files are added in a separeted step to the 
 
 ## Template Preparation
 
-The saved template is a base for the provisioning, but it has to be manually further updated.
+The saved template is a base for the provisioning, but it has to be manually updated.
 
 ### Template Cleanup
 
@@ -109,5 +109,5 @@ This will create the structures and set the initial data for the solution on the
 
 ## Further Reading
 
-* [PnP-Provisioning-Schema](https://github.com/SharePoint/PnP-Provisioning-Schema/): examples and template schema description
+* [PnP-Provisioning-Schema](https://github.com/SharePoint/PnP-Provisioning-Schema/): examples and template schema definition
 * [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
