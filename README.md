@@ -48,7 +48,7 @@ This project uses to following development concepts and resources.
 
 ![image](./images/jest-tests-example.png)
 
-**[Acceptance tests](https://github.com/leberns/sp-hello-events/wiki/Robot-Framework-for-End-to-End-Tests-on-SharePoint-Framework example:**
+**[Acceptance tests](https://github.com/leberns/sp-hello-events/wiki/Robot-Framework-for-End-to-End-Tests-on-SharePoint-Framework) example:**
 
 ![image](./images/acceptance-tests-example.png)
 
