@@ -34,21 +34,21 @@ This project uses to following development concepts and resources.
   - [PnP/PnPJs](https://pnp.github.io/pnpjs/): PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs in a type-safe way  
   - [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react): Fabric React is a collection of robust React-based components designed to make it simple for you to create consistent web experiences
 
-## Demo Images
+### Demo Images
 
-Client side web part Hello Events:
+**Client side web part Hello Events** from [SPFx Hello Events](./spfx-hello-events):
 
 ![image](./images/hello-events-web-part.png)
 
-Hello Events web part item:
+**Hello Events web part item:**
 
 ![image](./images/hello-events-web-part-item.png)
 
-Jest tests example:
+**[Jest tests](https://github.com/leberns/sp-hello-events/wiki/Jest-Testing-a-SPFx-Project) example:**
 
 ![image](./images/jest-tests-example.png)
 
-Acceptance tests example:
+**[Acceptance tests](https://github.com/leberns/sp-hello-events/wiki/Robot-Framework-for-End-to-End-Tests-on-SharePoint-Framework example:**
 
 ![image](./images/acceptance-tests-example.png)
 
