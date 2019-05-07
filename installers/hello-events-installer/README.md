@@ -20,9 +20,9 @@ The PnP PowerShell is needed because the installer uses a few commands directly 
 
 ## Applying the Provisioning Template
 
-In short, execute the PowerShell script [`set-template.ps1`](./set-template.ps1) to apply the templates on the given site.
+In short, execute the PowerShell script [`set-template.ps1`](./set-template.ps1) to apply the templates to the given site.
 
-For details see the code, template files and data files [here](./) and the other sections in this document.
+For details see the scripts, template files and data files here and the other sections within this document.
 
 ## Creating the Provisioning Template
 
