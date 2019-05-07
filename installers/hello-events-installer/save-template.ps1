@@ -21,7 +21,7 @@ Get-PnPProvisioningTemplate -Out $TemplateFilePath -Handlers Fields,ContentTypes
 
 $EventsLogoFilePath = ".\site-assets\hello-events-logo.png"
 $EventsLogoTargetUrl = "SiteAssets"
-Write-Host "Adding file references to the template in the elements: Files / File ..."
+Write-Host "Adding file references to the template..."
 Add-PnPFileToProvisioningTemplate -Path $TemplateFilePath -Source $EventsLogoFilePath -Folder $EventsLogoTargetUrl -FileLevel Published -FileOverwrite:$true
 
 Write-Host "Adding list items from the existing lists to the template..."
