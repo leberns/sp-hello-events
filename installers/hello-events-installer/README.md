@@ -1,20 +1,20 @@
 # Hello Events Installer
 
-These scripts provision the structures and data needed for the Hello Events solution to work on a site.
-
-For an introduction about the PnP Provisioning Engine see [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
+These scripts provision the structures and data needed for the Hello Events solution to work on a site, it uses the the PnP Provisioning Engine.
 
 ## Prerequisites
 
 * Install the [PnP ProwerShell](https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps#installation)
 
-For example, this would install the PnP PowerShell for SharePoint Online:
+For example, this would install the PnP PowerShell for SharePoint online on your local system:
 
 ```PowerShell
 Install-Module SharePointPnPPowerShellOnline
 ```
 
-The PnP PowerShell is needed because the installer uses a few commands directly from it and because the PnP Provisioning Engine is also available from the PnP PowerShell.
+The installer uses a few commands directly from the PnP PowerShell and the PnP Provisioning Engine, which is also available from the PnP PowerShell.
+
+For an introduction about the PnP Provisioning Engine see [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
 
 * Organise an user which is site collection administrator in order to connect to SharePoint. It could be a tenant administrator for development. The credentials will be requested by the installer scripts.
 
@@ -110,4 +110,4 @@ Review if Note fields should be `Compatible` or `FullHTML` in attribute `RichTex
 ## Further Reading
 
 * [PnP-Provisioning-Schema](https://github.com/SharePoint/PnP-Provisioning-Schema/): examples and template schema definition
-* [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
+* [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning)
