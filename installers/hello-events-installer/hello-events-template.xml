@@ -4,15 +4,15 @@
   <pnp:Templates ID="CONTAINER-TEMPLATE-8F952139882B42829DB78C7DF18CD351">
     <pnp:ProvisioningTemplate ID="TEMPLATE-8F952139882B42829DB78C7DF18CD351" Version="1" Scope="RootSite">
       <pnp:SiteFields>
-        <Field Type="Note" DisplayName="Event Description" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="3" RichText="TRUE" RichTextMode="Compatible" IsolateStyles="TRUE" Sortable="FALSE" Group="_Hello Events" ID="{0cb734c3-f3d8-4932-81de-0e9f7862e09c}" SourceID="{161e1c1c-1bf7-459e-b868-3a5502724c17}" StaticName="HEvDescription" Name="HEvDescription" CustomFormatter="" RestrictedMode="TRUE" AppendOnly="FALSE" UnlimitedLengthInDocumentLibrary="FALSE">
+        <Field Type="Lookup" DisplayName="Event Category" Required="FALSE" EnforceUniqueValues="FALSE" List="{{listid:Event Categories}}" WebId="{siteid}" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" Group="_Hello Events" ID="{a6105e03-e55a-4539-a0c2-ea64783d316d}" SourceID="{{siteid}}" StaticName="HEvCategoryRef" Name="HEvCategoryRef" />
         <Field Type="DateTime" DisplayName="Start" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" Group="_Hello Events" FriendlyDisplayFormat="Disabled" ID="{dc9e3216-1cd0-41a4-86f1-c94da494a140}" SourceID="{161e1c1c-1bf7-459e-b868-3a5502724c17}" StaticName="HEvStart" Name="HEvStart" CustomFormatter="" CalType="0">
           <Default>[today]</Default>
         </Field>
+        <Field Type="Lookup" DisplayName="Image" Required="FALSE" EnforceUniqueValues="FALSE" List="{{listid:Event Content Images}}" WebId="{siteid}" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" Group="_Hello Events" ID="{18f53f4c-3999-400c-9c6b-8dd137cf2f81}" SourceID="{{siteid}}" StaticName="HEvImageRef" Name="HEvImageRef" />
         <Field Type="DateTime" DisplayName="End" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="DateTime" Group="_Hello Events" FriendlyDisplayFormat="Disabled" ID="{e1ff14ae-14c9-45e4-800f-098d27d3a29d}" SourceID="{161e1c1c-1bf7-459e-b868-3a5502724c17}" StaticName="HEvEnd" Name="HEvEnd" CustomFormatter="" CalType="0">
           <DefaultFormula>=NOW()+(2/24)</DefaultFormula>
         </Field>
-        <Field Type="Lookup" DisplayName="Event Category" Required="FALSE" EnforceUniqueValues="FALSE" List="{{listid:Event Categories}}" WebId="{siteid}" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" Group="_Hello Events" ID="{a6105e03-e55a-4539-a0c2-ea64783d316d}" SourceID="{{siteid}}" StaticName="HEvCategoryRef" Name="HEvCategoryRef" />
-        <Field Type="Lookup" DisplayName="Image" Required="FALSE" EnforceUniqueValues="FALSE" List="{{listid:Event Content Images}}" WebId="{siteid}" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" Group="_Hello Events" ID="{18f53f4c-3999-400c-9c6b-8dd137cf2f81}" SourceID="{{siteid}}" StaticName="HEvImageRef" Name="HEvImageRef" />
+        <Field Type="Note" DisplayName="Event Description" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" NumLines="3" RichText="TRUE" RichTextMode="Compatible" IsolateStyles="TRUE" Sortable="FALSE" Group="_Hello Events" ID="{0cb734c3-f3d8-4932-81de-0e9f7862e09c}" SourceID="{161e1c1c-1bf7-459e-b868-3a5502724c17}" StaticName="HEvDescription" Name="HEvDescription" CustomFormatter="" RestrictedMode="TRUE" AppendOnly="FALSE" UnlimitedLengthInDocumentLibrary="FALSE">
         </Field>
       </pnp:SiteFields>
       <pnp:ContentTypes>
@@ -162,7 +162,7 @@
           <pnp:ContentTypeBindings>
             <pnp:ContentTypeBinding ContentTypeID="0x01000A65544010EBEC4D90EE42FD990F1B0B" Default="true" />
             <pnp:ContentTypeBinding ContentTypeID="0x0120" />
-			<pnp:ContentTypeBinding ContentTypeID="0x01" Remove="true"/>
+			      <pnp:ContentTypeBinding ContentTypeID="0x01" Remove="true"/>
           </pnp:ContentTypeBindings>
           <pnp:Views>
             <View Name="{5BD9C014-2183-4683-9FBB-58D24AC5BD93}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="/sites/CompanyEvents/Lists/EventsCatalog/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=46">
@@ -209,9 +209,9 @@
         </pnp:ListInstance>
       </pnp:Lists>
       <pnp:Files>
-        <pnp:File Src=".\site-assets\hello-events-logo.png" Folder="SiteAssets" Overwrite="true" Level="Published" />
-        <pnp:Directory Src=".\event-images" Folder="EventContentImages" Overwrite="true"
-          Recursive="false" MetadataMappingFile=".\event-images-metadata.json" />
+        <pnp:Directory Src=".\event-images" Folder="EventContentImages" Overwrite="true" Recursive="false" 
+          MetadataMappingFile=".\event-images-metadata.json" />
+        <pnp:Directory Src=".\site-assets" Folder="SiteAssets" Overwrite="true" Recursive="false" />
       </pnp:Files>
     </pnp:ProvisioningTemplate>
   </pnp:Templates>

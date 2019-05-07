@@ -9,6 +9,7 @@ Write-Host "Setting trace log to log file $TraceLogFilePath ..."
 Set-PnPTraceLog -On -Level Debug -LogFile $TraceLogFilePath
 
 $SiteUrl = Read-Host "Template site url (ex.: https://contoso.sharepoint.com/sites/CompanyEvents)"
+
 Write-Host "Connecting to the site $SiteUrl ..."
 Connect-PnPOnline -Url $SiteUrl -Credentials $UserCredential
 
@@ -23,14 +24,14 @@ $EventsLogoTargetUrl = "SiteAssets"
 Write-Host "Adding file references to the template in the elements: Files / File ..."
 Add-PnPFileToProvisioningTemplate -Path $TemplateFilePath -Source $EventsLogoFilePath -Folder $EventsLogoTargetUrl -FileLevel Published -FileOverwrite:$true
 
-Write-Host "Adding list items from the existing lists to the template in the elements DataRows / DataRow ..."
+Write-Host "Adding list items from the existing lists to the template..."
 
 $EventCategoriesListTitle = "Event Categories"
 Write-Host $EventCategoriesListTitle
 Add-PnPDataRowsToProvisioningTemplate -Path $TemplateFilePath -List $EventCategoriesListTitle -Query "<View></View>" -Fields "Title"
 
 $EventsListTitle = "Events Catalog"
-Write-Host $EventCategoriesListTitle
+Write-Host $EventsListTitle
 Add-PnPDataRowsToProvisioningTemplate -Path $TemplateFilePath -List $EventsListTitle -Query "<View></View>" -Fields "Title","HEvDescription","HEvStart","HEvEnd","HEvCategoryRef","HEvImageRef","HEvLocation"
 
 Write-Host "Done."
