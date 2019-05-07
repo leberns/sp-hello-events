@@ -34,6 +34,12 @@ This project uses to following development concepts and resources.
   - [PnP/PnPJs](https://pnp.github.io/pnpjs/): PnPjs is a collection of fluent libraries for consuming SharePoint, Graph, and Office 365 REST APIs in a type-safe way  
   - [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react): Fabric React is a collection of robust React-based components designed to make it simple for you to create consistent web experiences
 
+## Demo Images
+
+### Client Side Hello Events Web Part
+
+![image](./images/hello-events-web-part.png)
+
 ## Version History
 
 Version|Date|Comments
