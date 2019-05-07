@@ -12,9 +12,7 @@ For example, this would install the PnP PowerShell for SharePoint online on your
 Install-Module SharePointPnPPowerShellOnline
 ```
 
-The installer uses a few commands directly from the PnP PowerShell and the PnP Provisioning Engine, which is also available from the PnP PowerShell.
-
-For an introduction about the PnP Provisioning Engine see [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
+The installer uses a few commands directly from the PnP PowerShell and the PnP Provisioning Engine, which is also available from the PnP PowerShell. For an introduction about the PnP Provisioning Engine see [PnP remote provisioning](https://docs.microsoft.com/en-us/sharepoint/dev/solution-guidance/pnp-remote-provisioning).
 
 * Organise an user which is site collection administrator in order to connect to SharePoint. It could be a tenant administrator for development. The credentials will be requested by the installer scripts.
 
