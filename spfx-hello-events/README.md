@@ -1,5 +1,3 @@
-Go to [Topmost Project README](../README.md)
-
 # SPFx Hello Events
 
 ## Purpose
@@ -8,7 +6,7 @@ This SharePoint Framework project implements a web part to display the events as
 
 ## Prerequisites
 
-The list of events should already exist on the site.
+The site has to be already configured, see the [installers](../installers) section for that.
 
 ## Development Notes
 
