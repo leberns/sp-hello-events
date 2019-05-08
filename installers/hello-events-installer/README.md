@@ -74,6 +74,8 @@ If the idea is to remove the content types also from existing lists, even if an 
 <pnp:ContentTypeBinding ContentTypeID="0x01" Remove="true"/>
 ```
 
+This works the same for document libraries and other types of lists with other content types.
+
 ### Uploading Files from a Local Folder
 
 It is possible to upload files from a local folder to a library or folder on SharePoint.
