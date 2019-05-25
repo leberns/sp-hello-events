@@ -56,21 +56,21 @@ export default class EventsListContainer extends React.Component<EventsListConta
   private async fetchEvents() {
     try {
       const eventsService = this.props.eventsService;
-      const eventsColl = await eventsService.fetchEvents();
+      const events = await eventsService.fetchEvents();
       this.setState({
-        events: eventsColl
+        events
       });
     }
     catch(error) {
       this.setState({
-        error: error
+        error
       });
     }
   }
 
   public static getDerivedStateFromError(error: any) {
     return {
-      error: error
+      error
     };
   }
 }

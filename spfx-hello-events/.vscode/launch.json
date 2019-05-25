@@ -8,7 +8,7 @@
       "name": "Local workbench",
       "type": "chrome",
       "request": "launch",
-      "url": "https://adessoleandrobernsmueller.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",
+      "url": "https://localhost:4321/temp/workbench.html",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
       "sourceMapPathOverrides": {
@@ -25,7 +25,7 @@
       "name": "Hosted workbench",
       "type": "chrome",
       "request": "launch",
-      "url": "https://enter-your-SharePoint-site/_layouts/workbench.aspx",
+      "url": "https://adessoleandrobernsmueller.sharepoint.com/sites/CompanyEvents/_layouts/workbench.aspx",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
       "sourceMapPathOverrides": {
