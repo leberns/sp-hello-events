@@ -1,19 +1,16 @@
 import React from 'react';
 import 'jest';
 import TestRenderer from 'react-test-renderer';
-import { IEventsCollection } from '../../../../references';
-import { MockEventsListService } from '../../../../services/basic/MockEventsListService';
-import { MockImagesLibService } from '../../../../services/basic/MockImagesLibService';
-import { ServicesFactory } from '../../../../services/ServicesFactory';
+import SearchEvents from './SearchEvents';
 
-describe('EventsList', () => {
+describe('SearchEvents component', () => {
 
-  let eventsCollection: IEventsCollection;
+  it('should render the Filter button', () => {
+    const testRenderer = TestRenderer.create(<SearchEvents initialExpression="Lorem" executeSearchHandler={searchExpression => searchExpression } />);
+    const testInstance = testRenderer.root;
 
-  beforeAll( async () => {
-    const servicesFactory = new ServicesFactory();
-    const eventsService = servicesFactory.createEventService(new MockEventsListService(), new MockImagesLibService());
-    eventsCollection = await eventsService.fetchEvents();
+    const button = testInstance.findByType('button');
+
+    expect(button).toBeDefined();
   });
-
 });

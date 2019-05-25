@@ -47,8 +47,8 @@ describe('Event component', () => {
     const serviceWithNullData = new MockEventsListService(eventItemsWithNullData);
     const servicesFactory = new ServicesFactory();
     const eventsService = servicesFactory.createEventService(serviceWithNullData, new MockImagesLibService());
-    const eventsCollection = await eventsService.fetchEvents();
-    const eventWithNulls = eventsCollection.items[0];
+    const events = await eventsService.fetchEvents();
+    const eventWithNulls = events[0];
     const testRenderer = TestRenderer.create(<Event event={eventWithNulls} />);
     const testInstance = testRenderer.root;
 
