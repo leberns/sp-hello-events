@@ -1,14 +1,14 @@
 import * as React from 'react';
-import styles from './HelloEvents.module.scss';
 import { IHelloEventsProps } from './IHelloEventsProps';
-import { IHelloEventsState } from './IHelloEventsState';
+import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 import EventsListContainer from '../eventsListContainer/EventsListContainer';
 
-export default class HelloEvents extends React.Component<IHelloEventsProps, IHelloEventsState> {
+export default class HelloEvents extends React.Component<IHelloEventsProps, {}> {
   public render(): React.ReactElement<IHelloEventsProps> {
     return (
-      <EventsListContainer
-        eventsService={this.props.eventsService} />
+      <ErrorBoundary>
+        <EventsListContainer eventsService={this.props.eventsService} />
+      </ErrorBoundary>
     );
   }
 }

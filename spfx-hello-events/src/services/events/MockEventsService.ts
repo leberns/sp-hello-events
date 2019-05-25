@@ -16,7 +16,7 @@ export class MockEventsService implements IEventsService {
     country: 'CH'
   };
 
-  private events: IEventsCollection = { items: [
+  private events: IEventsCollection = [
     {
       id: MockEventsListService.evId,
       title: MockEventsListService.evTitle,
@@ -47,9 +47,9 @@ export class MockEventsService implements IEventsService {
         country: 'CH'
       }
     }
-  ]};
+  ];
 
-  private static eventsWithNullData: IEventsCollection = { items: [
+  private static eventsWithNullData: IEventsCollection = [
     {
       id: MockEventsListService.evId,
       title: MockEventsListService.evTitle,
@@ -61,7 +61,7 @@ export class MockEventsService implements IEventsService {
       imageUrl: null,
       location: null
     }
-  ]};
+  ];
 
   public static getEventsWithNullData(): IEventsCollection {
     return MockEventsService.eventsWithNullData;
@@ -72,7 +72,7 @@ export class MockEventsService implements IEventsService {
   }
 
   public getEventByIndex(index: number): IEvent {
-    return this.events.items[index];
+    return this.events[index];
   }
 
   public fetchEvents(): Promise<IEventsCollection> {

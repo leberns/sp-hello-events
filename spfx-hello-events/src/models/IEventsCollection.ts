@@ -1,5 +1,3 @@
 import { IEvent } from "./IEvent";
 
-export interface IEventsCollection {
-  items: IEvent[];
-}
+export type IEventsCollection = IEvent[];

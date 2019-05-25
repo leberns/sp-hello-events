@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IEventsCollection } from "../../../../references";
+import { IEventsCollection } from '../../../../references';
 import styles from './EventsList.module.scss';
 import Event from '../event/Event';
 
@@ -15,7 +15,7 @@ export default class EventsList extends React.Component<IEventsListProps, IEvent
   public render() {
     return (
       <div className={ styles.eventsList }>
-        {this.props.events.items.map(event =>
+        {this.props.events.map(event =>
           <Event key={event.id} event={event} />
         )}
       </div>

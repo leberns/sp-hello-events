@@ -58,9 +58,7 @@ export class EventsService implements IEventsService {
       return event;
     });
 
-    const eventsCollection: IEventsCollection = {
-      items: events
-    };
+    const eventsCollection: IEventsCollection = events;
 
     await this.retrieveImageUrls(eventsCollection);
 
@@ -69,7 +67,7 @@ export class EventsService implements IEventsService {
 
   private async retrieveImageUrls(eventsCollection: IEventsCollection): Promise<void> {
     const imageIds = [];
-    for(let event of eventsCollection.items) {
+    for(let event of eventsCollection) {
       if(!event.imageId) {
         continue;
       }
@@ -88,7 +86,7 @@ export class EventsService implements IEventsService {
 
     await this.imagesLibService.fetchImageUrls(imageIds);
 
-    for(let event of eventsCollection.items) {
+    for(let event of eventsCollection) {
       if(!event.imageId) {
         continue;
       }

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { IEventsCollection } from "../../../../references";
 import { IEventsService } from '../../../../services/events/IEventsService';
 import styles from './EventsListContainer.module.scss';
+import SearchEvents from '../searchEvents/SearchEvents';
 import EventsList from '../eventsList/EventsList';
 
 export interface EventsListContainerProps {
@@ -10,7 +11,7 @@ export interface EventsListContainerProps {
 
 export interface EventsListContainerState {
   events: IEventsCollection;
-  error: any;
+  filteredEvents: IEventsCollection;
 }
 
 export default class EventsListContainer extends React.Component<EventsListContainerProps, EventsListContainerState> {
@@ -18,34 +19,26 @@ export default class EventsListContainer extends React.Component<EventsListConta
   constructor(props: EventsListContainerProps) {
     super(props);
     this.state = {
-      events: {items:[]},
-      error: null
+      events: [],
+      filteredEvents: []
     };
   }
 
-  public render() {
-    let errorMessage = '';
-    let stack = '';
-    if(!!this.state.error) {
-      errorMessage = !!this.state.error.message ? this.state.error.message : '';
-      stack = !!this.state.error.stack ? this.state.error.stack : '';
-    }
+  private executeSearch(searchExpression: string) {
+    const matchingEvents = this.state.events.filter(
+      event => event.title.toLowerCase().indexOf(searchExpression.toLowerCase()) !== -1
+    );
+    this.setState({
+      filteredEvents: matchingEvents
+    });
+  }
 
+  public render() {
     return (
-      this.state.error ? (
-        <div className={ styles.eventsListContainer }>
-          <div className={ styles.error }>
-            <h2>Something went wrong.</h2>
-            <details style={{ whiteSpace: 'pre-wrap' }}>
-              {errorMessage}
-              <br />
-              {stack}
-            </details>
-          </div>
-        </div>
-      ) : (
-        <EventsList events={this.state.events} />
-      )
+      <div>
+        <SearchEvents initialExpression={''} executeSearchHandler={(searchExpression: string) => this.executeSearch(searchExpression)}></SearchEvents>
+        <EventsList events={this.state.filteredEvents} />
+      </div>
     );
   }
 
@@ -54,23 +47,11 @@ export default class EventsListContainer extends React.Component<EventsListConta
   }
 
   private async fetchEvents() {
-    try {
-      const eventsService = this.props.eventsService;
-      const events = await eventsService.fetchEvents();
-      this.setState({
-        events
-      });
-    }
-    catch(error) {
-      this.setState({
-        error
-      });
-    }
-  }
-
-  public static getDerivedStateFromError(error: any) {
-    return {
-      error
-    };
+    const eventsService = this.props.eventsService;
+    const events = await eventsService.fetchEvents();
+    this.setState({
+      events,
+      filteredEvents: events
+    });
   }
 }
