@@ -17,7 +17,6 @@ export default class Event extends React.Component<IEventProps, IEventState> {
   }
 
   public render() {
-
     return (
       <div className={ styles.event }>
         <div className={ styles.column1 }>

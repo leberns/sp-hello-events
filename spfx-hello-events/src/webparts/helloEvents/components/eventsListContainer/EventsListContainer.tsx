@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { IEventsCollection } from "../../../../references";
 import { IEventsService } from '../../../../services/events/IEventsService';
-import styles from './EventsListContainer.module.scss';
 import SearchEvents from '../searchEvents/SearchEvents';
 import EventsList from '../eventsList/EventsList';
 
@@ -12,6 +11,7 @@ export interface EventsListContainerProps {
 export interface EventsListContainerState {
   events: IEventsCollection;
   filteredEvents: IEventsCollection;
+  error: any;
 }
 
 export default class EventsListContainer extends React.Component<EventsListContainerProps, EventsListContainerState> {
@@ -20,7 +20,8 @@ export default class EventsListContainer extends React.Component<EventsListConta
     super(props);
     this.state = {
       events: [],
-      filteredEvents: []
+      filteredEvents: [],
+      error: null
     };
   }
 
@@ -34,6 +35,10 @@ export default class EventsListContainer extends React.Component<EventsListConta
   }
 
   public render() {
+    if (!!this.state.error) {
+      throw this.state.error;
+    }
+
     return (
       <div>
         <SearchEvents initialExpression={''} executeSearchHandler={(searchExpression: string) => this.executeSearch(searchExpression)}></SearchEvents>
@@ -47,11 +52,18 @@ export default class EventsListContainer extends React.Component<EventsListConta
   }
 
   private async fetchEvents() {
-    const eventsService = this.props.eventsService;
-    const events = await eventsService.fetchEvents();
-    this.setState({
-      events,
-      filteredEvents: events
-    });
+    try {
+      const eventsService = this.props.eventsService;
+      const events = await eventsService.fetchEvents();
+      this.setState({
+        events,
+        filteredEvents: events
+      });
+    }
+    catch(error){
+      this.setState({
+        error
+      });
+    }
   }
 }
